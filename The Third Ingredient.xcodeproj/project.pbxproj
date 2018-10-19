@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		550F624221726ECB00B5D5EB /* happy-piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 550F624121726ECA00B5D5EB /* happy-piano.mp3 */; };
+		550F6245217278AE00B5D5EB /* pencil.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 550F6244217278AE00B5D5EB /* pencil.mp3 */; };
 		5516CD502162E001007C28F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5516CD4F2162E001007C28F7 /* AppDelegate.swift */; };
 		5516CD522162E001007C28F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5516CD512162E001007C28F7 /* ViewController.swift */; };
 		5516CD552162E001007C28F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5516CD532162E001007C28F7 /* Main.storyboard */; };
 		5516CD582162E001007C28F7 /* The_Third_Ingredient.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5516CD562162E001007C28F7 /* The_Third_Ingredient.xcdatamodeld */; };
 		5516CD5A2162E001007C28F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5516CD592162E001007C28F7 /* Assets.xcassets */; };
 		5516CD5D2162E001007C28F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5516CD5B2162E001007C28F7 /* LaunchScreen.storyboard */; };
+		55A527372167BEAA00A1782C /* BookJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 55A527362167BEAA00A1782C /* BookJson.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		550F624121726ECA00B5D5EB /* happy-piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "happy-piano.mp3"; sourceTree = "<group>"; };
+		550F6244217278AE00B5D5EB /* pencil.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pencil.mp3; sourceTree = "<group>"; };
 		5516CD4C2162E001007C28F7 /* The Third Ingredient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Third Ingredient.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5516CD4F2162E001007C28F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5516CD512162E001007C28F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +29,7 @@
 		5516CD592162E001007C28F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5516CD5C2162E001007C28F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5516CD5E2162E001007C28F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55A527362167BEAA00A1782C /* BookJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BookJson.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		550F624321726EDA00B5D5EB /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				550F6244217278AE00B5D5EB /* pencil.mp3 */,
+				550F624121726ECA00B5D5EB /* happy-piano.mp3 */,
+			);
+			path = audio;
+			sourceTree = "<group>";
+		};
 		5516CD432162E001007C28F7 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +71,8 @@
 		5516CD4E2162E001007C28F7 /* The Third Ingredient */ = {
 			isa = PBXGroup;
 			children = (
+				550F624321726EDA00B5D5EB /* audio */,
+				55A527362167BEAA00A1782C /* BookJson.json */,
 				5516CD4F2162E001007C28F7 /* AppDelegate.swift */,
 				5516CD512162E001007C28F7 /* ViewController.swift */,
 				5516CD532162E001007C28F7 /* Main.storyboard */,
@@ -127,8 +144,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5516CD5D2162E001007C28F7 /* LaunchScreen.storyboard in Resources */,
+				550F6245217278AE00B5D5EB /* pencil.mp3 in Resources */,
 				5516CD5A2162E001007C28F7 /* Assets.xcassets in Resources */,
+				55A527372167BEAA00A1782C /* BookJson.json in Resources */,
 				5516CD552162E001007C28F7 /* Main.storyboard in Resources */,
+				550F624221726ECB00B5D5EB /* happy-piano.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NC3NUX9MDW;
 				INFOPLIST_FILE = "The Third Ingredient/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "apple.The-Third-Ingredient";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -296,6 +317,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NC3NUX9MDW;
 				INFOPLIST_FILE = "The Third Ingredient/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "apple.The-Third-Ingredient";
 				PRODUCT_NAME = "$(TARGET_NAME)";
