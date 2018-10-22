@@ -14,15 +14,13 @@ class ViewController: UIViewController {
     
     var arrayOfContent = Array<Any>()
     var presentPage = 1
-    var audioPlayer: AVAudioPlayer?
-
+    var arrayOfAudioPlayers = Array<AVAudioPlayer>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         readJson()
         createPage(i: presentPage)
-        playMusic(name:"happy-piano")
-
 
     }
     
@@ -89,7 +87,6 @@ class ViewController: UIViewController {
         }
         presentPage += 1
         createPage(i: presentPage)
-        stopMusic()
     }
     
     @objc func previousPage(){
@@ -117,34 +114,47 @@ class ViewController: UIViewController {
     }
     
     func createPage(i:Int){
+        stopMusic()
+        
         if ((arrayOfContent[i-1] as! NSDictionary)["photo"] != nil){
             addTextView(text: (arrayOfContent[i-1] as! NSDictionary)["text"]! as! String, type: "normal")
             addImageView(image: (arrayOfContent[i-1] as! NSDictionary)["photo"]! as! String)
         }else{
             addTextView(text: (arrayOfContent[i-1] as! NSDictionary)["text"]! as! String, type: "withoutPhoto")
         }
+        
         createBrackets()
         createButtons(pageNumber: i)
+        
+        if ((arrayOfContent[i-1] as! NSDictionary)["audio"] != nil){
+            playMusic(array: (arrayOfContent[i-1] as! NSDictionary)["audio"]! as! [String])
+        }
     }
     
-    func playMusic(name: String){
-//        let url = Bundle.main.url(forResource: "happy-piano", withExtension: "mp3")!
-        let path = Bundle.main.path(forResource: name, ofType : "mp3")!
-        let url = URL(fileURLWithPath : path)
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            guard let sound = audioPlayer else { return }
+    func playMusic(array: [String]){
+        
+        for name in array{
+            let path = Bundle.main.path(forResource: name, ofType : "mp3")!
+            let url = URL(fileURLWithPath : path)
+            do {
+                let audioPlayer = try AVAudioPlayer(contentsOf: url)
 
-            sound.prepareToPlay()
-            sound.play()
-        } catch let error {
-            print(error.localizedDescription)
+                audioPlayer.prepareToPlay()
+                audioPlayer.play()
+                
+                arrayOfAudioPlayers.append(audioPlayer)
+            } catch let error {
+                print(error.localizedDescription)
+            }
         }
         
     }
     
     func stopMusic(){
-        audioPlayer?.stop()
+        for audioPlayer in arrayOfAudioPlayers{
+            audioPlayer.stop()
+        }
+        arrayOfAudioPlayers.removeAll()
     }
     
     override func didReceiveMemoryWarning() {

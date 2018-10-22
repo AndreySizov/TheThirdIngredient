@@ -16,6 +16,8 @@
 		5516CD5A2162E001007C28F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5516CD592162E001007C28F7 /* Assets.xcassets */; };
 		5516CD5D2162E001007C28F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5516CD5B2162E001007C28F7 /* LaunchScreen.storyboard */; };
 		55A527372167BEAA00A1782C /* BookJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 55A527362167BEAA00A1782C /* BookJson.json */; };
+		55AF826B217E09E600EF608E /* steps.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55AF8269217E09E600EF608E /* steps.mp3 */; };
+		55AF826C217E09E600EF608E /* romantic-piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55AF826A217E09E600EF608E /* romantic-piano.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		5516CD5C2162E001007C28F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5516CD5E2162E001007C28F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55A527362167BEAA00A1782C /* BookJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BookJson.json; sourceTree = "<group>"; };
+		55AF8269217E09E600EF608E /* steps.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = steps.mp3; sourceTree = "<group>"; };
+		55AF826A217E09E600EF608E /* romantic-piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "romantic-piano.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,8 @@
 		550F624321726EDA00B5D5EB /* audio */ = {
 			isa = PBXGroup;
 			children = (
+				55AF826A217E09E600EF608E /* romantic-piano.mp3 */,
+				55AF8269217E09E600EF608E /* steps.mp3 */,
 				550F6244217278AE00B5D5EB /* pencil.mp3 */,
 				550F624121726ECA00B5D5EB /* happy-piano.mp3 */,
 			);
@@ -143,12 +149,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55AF826B217E09E600EF608E /* steps.mp3 in Resources */,
 				5516CD5D2162E001007C28F7 /* LaunchScreen.storyboard in Resources */,
 				550F6245217278AE00B5D5EB /* pencil.mp3 in Resources */,
 				5516CD5A2162E001007C28F7 /* Assets.xcassets in Resources */,
 				55A527372167BEAA00A1782C /* BookJson.json in Resources */,
 				5516CD552162E001007C28F7 /* Main.storyboard in Resources */,
 				550F624221726ECB00B5D5EB /* happy-piano.mp3 in Resources */,
+				55AF826C217E09E600EF608E /* romantic-piano.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
