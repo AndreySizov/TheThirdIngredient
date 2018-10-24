@@ -53,10 +53,17 @@ class ViewController: UIViewController {
         var view = UITextView()
         switch state {
         case .Portrait:
+            
+            let x = self.view.frame.size.width/26
+            let y = self.view.frame.origin.y + 64   //19+15+30
+            let width = self.view.frame.size.width*0.923    //*24/26
+            let height = self.view.frame.size.height - 134 //-19-15-60-40
+            
             if type == "normal"{
-                view = UITextView(frame: CGRect(x: self.view.frame.origin.x + self.view.frame.size.width/26, y: self.view.frame.origin.y + 19 + 15 + 30, width: 24*self.view.frame.size.width/26, height: 0.7*(self.view.frame.size.height - 19 - 15 - 60 - 40)))
+                
+                view = UITextView(frame: CGRect(x: x, y: y, width: width, height: 0.7*height))
             }else{
-                view = UITextView(frame: CGRect(x: self.view.frame.origin.x + self.view.frame.size.width/26, y: self.view.frame.origin.y + 19 + 15 + 30, width: 24*self.view.frame.size.width/26, height: self.view.frame.size.height - 19 - 15 - 60 - 40))
+                view = UITextView(frame: CGRect(x: x, y: y, width: width, height: height))
             }
             if(self.view.frame.size.width < 414){
                 view.font = UIFont(name: "AmericanTypewriter", size: 12)
@@ -70,20 +77,22 @@ class ViewController: UIViewController {
             self.view.addSubview(view)
             
         case .Landscape:
+            
+            let x = self.view.frame.origin.x + self.view.frame.size.width/45
+            let y = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 5
+            let upper_height = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 10
+            let height = 0.93*self.view.frame.size.height - upper_height
+            
             if type == "normal"{
-                let x = self.view.frame.origin.x + self.view.frame.size.width/45
-                let y = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 5
+
                 let width = 0.6533*self.view.frame.size.width
-                let upper_height = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 10
-                let height = 0.93*self.view.frame.size.height - upper_height
+
                 
                 view = UITextView(frame: CGRect(x: x, y: y, width: width, height: height))
             }else{
-                let x = self.view.frame.origin.x + self.view.frame.size.width/45
-                let y = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 5
+
                 let width = 0.9555*self.view.frame.size.width
-                let upper_height = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 10
-                let height = 0.93*self.view.frame.size.height - upper_height
+
                 
                 view = UITextView(frame: CGRect(x: x, y: y, width: width, height: height))
             }
@@ -103,12 +112,18 @@ class ViewController: UIViewController {
     func addImageView(image: String, state: AppOrientationState){
         switch state{
         case .Portrait:
-            let view = UIImageView(frame: CGRect(x: self.view.frame.origin.x + self.view.frame.size.width/26, y: self.view.frame.size.height - 30 - 40 - 0.3*(self.view.frame.size.height - 19 - 15 - 60 - 40), width: 24*self.view.frame.size.width/26, height: 0.3*(self.view.frame.size.height - 19 - 15 - 60 - 40)))
+            
+            let x = self.view.frame.size.width/26
+            let height = 0.3*(self.view.frame.size.height - 134)    //-19-15-60-40
+            let y = self.view.frame.size.height - 70 - height
+            let width = self.view.frame.size.width*0.923    //*24/26
+            
+            let view = UIImageView(frame: CGRect(x: x, y: y, width: width, height: height))
             view.image = UIImage(named:image)
             view.contentMode = .scaleAspectFit
             self.view.addSubview(view)
         case .Landscape:
-            let x = 0.955*self.view.frame.size.width - 0.2733*self.view.frame.size.width
+            let x = 0.6817*self.view.frame.size.width    //(0.955 - 0.2733)*self.view.frame.size.width
             let y = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 5
             let width = 0.2933*self.view.frame.size.width
 //   Calculations
