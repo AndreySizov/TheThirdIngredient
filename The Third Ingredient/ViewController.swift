@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     var presentPage = 1
     var arrayOfAudioPlayers = Array<AVAudioPlayer>()
     var orientation = AppOrientationState.Portrait
+    var textViewWidthInLandscapeMode: CGFloat?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,8 +66,10 @@ class ViewController: UIViewController {
             }else{
                 view = UITextView(frame: CGRect(x: x, y: y, width: width, height: height))
             }
-            if(self.view.frame.size.width < 414){
+            if(self.view.frame.size.height < 667){
                 view.font = UIFont(name: "AmericanTypewriter", size: 12)
+            }else if (self.view.frame.size.height < 736){
+                view.font = UIFont(name: "AmericanTypewriter", size: 14)
             }else{
                 view.font = UIFont(name: "AmericanTypewriter", size: 16)
             }
@@ -77,27 +80,45 @@ class ViewController: UIViewController {
             self.view.addSubview(view)
             
         case .Landscape:
-            
-            let x = self.view.frame.origin.x + self.view.frame.size.width/45
-            let y = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 5
-            let upper_height = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 10
-            let height = 0.93*self.view.frame.size.height - upper_height
-            
-            if type == "normal"{
-
-                let width = 0.6533*self.view.frame.size.width
-
+            if (self.view.frame.size.width <= 736){
+                let x = self.view.frame.origin.x + self.view.frame.size.width/45
+                let y = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 10
+                let upper_height = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 10
+                let height = 0.9*(self.view.frame.size.height - upper_height)
+                let width = 0.9333*self.view.frame.size.width //*42/45
                 
-                view = UITextView(frame: CGRect(x: x, y: y, width: width, height: height))
+                if type == "normal"{
+                    
+                    textViewWidthInLandscapeMode = width*0.7
+                    view = UITextView(frame: CGRect(x: x, y: y, width: width*0.7, height: height))
+                }else{
+
+                    let fullWidth = (width/42)*43
+                     textViewWidthInLandscapeMode = fullWidth
+                    view = UITextView(frame: CGRect(x: x, y: y, width: fullWidth, height: height))
+                }
             }else{
-
-                let width = 0.9555*self.view.frame.size.width
-
+                let x = self.view.frame.origin.x + 2*self.view.frame.size.width/45
+                let y = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 10
+                let upper_height = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 10
+                let height = 0.9*(self.view.frame.size.height - upper_height)
+                let width = 0.8889*self.view.frame.size.width //*40/45
                 
-                view = UITextView(frame: CGRect(x: x, y: y, width: width, height: height))
+                if type == "normal"{
+                    
+                    textViewWidthInLandscapeMode = width*0.75
+                    view = UITextView(frame: CGRect(x: x, y: y, width: width*0.75, height: height))
+                }else{
+                    
+                    let fullWidth = (width/40)*41
+                    textViewWidthInLandscapeMode = fullWidth
+                    view = UITextView(frame: CGRect(x: x, y: y, width: fullWidth, height: height))
+                }
             }
-            if(self.view.frame.size.width < 600){
+            if(self.view.frame.size.width < 667){
                 view.font = UIFont(name: "AmericanTypewriter", size: 12)
+            }else if (self.view.frame.size.width < 736){
+                view.font = UIFont(name: "AmericanTypewriter", size: 14)
             }else{
                 view.font = UIFont(name: "AmericanTypewriter", size: 16)
             }
@@ -123,19 +144,35 @@ class ViewController: UIViewController {
             view.contentMode = .scaleAspectFit
             self.view.addSubview(view)
         case .Landscape:
-            let x = 0.6817*self.view.frame.size.width    //(0.955 - 0.2733)*self.view.frame.size.width
-            let y = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 5
-            let width = 0.2933*self.view.frame.size.width
-//   Calculations
-//            let x = 43*self.view.frame.size.width/45 - 0.3*42*self.view.frame.size.width/45
-//            let width = 0.3*(44*self.view.frame.size.width/45)
-            let upper_height = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 10
-            let height = 0.93*self.view.frame.size.height - upper_height
-            let view = UIImageView(frame: CGRect(x: x, y: y, width: width, height: height))
+            
+            if (self.view.frame.size.width <= 736){
+                let x = 0.6978*self.view.frame.size.width
+                let y = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 30
+                let width = 0.28*self.view.frame.size.width
+    //   Calculations
+    //            let x = (42*self.view.frame.size.width/45)*0.7 + 2*self.view.frame.size.width/45
+    //            let width = 0.3*(42*self.view.frame.size.width/45)
+                let height = self.view.frame.size.height - 60
+                let view = UIImageView(frame: CGRect(x: x, y: y, width: width, height: height))
 
-            view.image = UIImage(named:image)
-            view.contentMode = .scaleAspectFit
-            self.view.addSubview(view)
+                view.image = UIImage(named:image)
+                view.contentMode = .scaleAspectFit
+                self.view.addSubview(view)
+            }else{
+                let x = 0.7333*self.view.frame.size.width
+                let y = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 30
+                let width = 0.2222*self.view.frame.size.width
+                //   Calculations
+                //            let x = (40*self.view.frame.size.width/45)*0.75 + 3*self.view.frame.size.width/45
+                //            let width = 0.25*(40*self.view.frame.size.width/45)
+
+                let height = self.view.frame.size.height - 60
+                let view = UIImageView(frame: CGRect(x: x, y: y, width: width, height: height))
+                
+                view.image = UIImage(named:image)
+                view.contentMode = .scaleAspectFit
+                self.view.addSubview(view)
+            }
         }
     }
     
@@ -164,25 +201,70 @@ class ViewController: UIViewController {
             rightButton.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
             self.view.addSubview(rightButton)
             
-            let numberButton = UIButton(frame: CGRect(x: self.view.frame.size.width/2 - 25, y: 0.93*self.view.frame.size.height, width: 50, height: 0.07*self.view.frame.size.height))
+            if textViewWidthInLandscapeMode != nil{
+                
+            var x = self.view.frame.size.width/45
+                x += textViewWidthInLandscapeMode!/2
+                x -= 25
+                
+            let numberButton = UIButton(frame: CGRect(x: x, y: 0.9*self.view.frame.size.height, width: 50, height: 0.1*self.view.frame.size.height))
             numberButton.setTitle("\(pageNumber)", for: .normal)
             numberButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 25)
             numberButton.setTitleColor(UIColor.black, for: .normal)
             self.view.addSubview(numberButton)
+            }else{
+                print("textView Width not found")
+            }
         }
     }
     
-    func createBrackets(){
+    func createBrackets(state: AppOrientationState){
         
-        let bracketUp = UIImageView(frame: CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y + 19 + 15, width: self.view.frame.size.width, height: 30))
-        bracketUp.image = UIImage(named:"bracketUp")
-        bracketUp.contentMode = .scaleAspectFit
-        self.view.addSubview(bracketUp)
+        switch state {
+        case .Portrait:
+            
+            let bracketUp = UIImageView(frame: CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y + 19 + 15, width: self.view.frame.size.width, height: 30))
+            bracketUp.image = UIImage(named:"bracketUp")
+            bracketUp.contentMode = .scaleAspectFit
+            self.view.addSubview(bracketUp)
 
-        let bracketDown = UIImageView(frame: CGRect(x: self.view.frame.origin.x, y: self.view.frame.size.height - 30 - 40, width: self.view.frame.size.width, height: 30))
-        bracketDown.image = UIImage(named:"bracketDown")
-        bracketDown.contentMode = .scaleAspectFit
-        self.view.addSubview(bracketDown)
+            let bracketDown = UIImageView(frame: CGRect(x: self.view.frame.origin.x, y: self.view.frame.size.height - 30 - 40, width: self.view.frame.size.width, height: 30))
+            bracketDown.image = UIImage(named:"bracketDown")
+            bracketDown.contentMode = .scaleAspectFit
+            self.view.addSubview(bracketDown)
+            
+        case .Landscape:
+            
+            var x = self.view.frame.size.width
+            var width = self.view.frame.size.width
+            
+            if (self.view.frame.size.width <= 736){
+                x = 0.6978*x
+                width = 0.28*width
+                //   Calculations
+                //            let x = (42*self.view.frame.size.width/45)*0.7 + 2*self.view.frame.size.width/45
+                //            let width = 0.3*(42*self.view.frame.size.width/45)
+            }else{
+                x = 0.7333*x
+                width = 0.2222*width
+                //   Calculations
+                //            let x = (40*self.view.frame.size.width/45)*0.75 + 3*self.view.frame.size.width/45
+                //            let width = 0.25*(40*self.view.frame.size.width/45)
+            }
+            
+
+            let bracketUp = UIImageView(frame: CGRect(x: x, y: self.view.frame.origin.y, width: width, height: 30))
+            bracketUp.image = UIImage(named:"bracketUp")
+            bracketUp.contentMode = .scaleAspectFit
+            self.view.addSubview(bracketUp)
+            
+            let bracketDown = UIImageView(frame: CGRect(x: x, y: self.view.frame.size.height - 30, width: width, height: 30))
+            bracketDown.image = UIImage(named:"bracketDown")
+            bracketDown.contentMode = .scaleAspectFit
+            self.view.addSubview(bracketDown)
+            
+        }
+        
     }
     
     
@@ -231,7 +313,7 @@ class ViewController: UIViewController {
                 addTextView(text: (arrayOfContent[i-1] as! NSDictionary)["text"]! as! String, type: "withoutPhoto", state: state)
             }
             
-            createBrackets()
+            createBrackets(state: state)
             createButtons(pageNumber: i, state: state)
             
             if ((arrayOfContent[i-1] as! NSDictionary)["audio"] != nil){
@@ -241,6 +323,7 @@ class ViewController: UIViewController {
             if ((arrayOfContent[i-1] as! NSDictionary)["photo"] != nil){
                 addTextView(text: (arrayOfContent[i-1] as! NSDictionary)["text"]! as! String, type: "normal", state: state)
                 addImageView(image: (arrayOfContent[i-1] as! NSDictionary)["photo"]! as! String, state: state)
+                createBrackets(state: state)
             }
             else{
                 addTextView(text: (arrayOfContent[i-1] as! NSDictionary)["text"]! as! String, type: "withoutPhoto", state: state)
