@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     var arrayOfContent: [Any]!
     var presentPage = 1
     var arrayOfAudioPlayers = Array<AVAudioPlayer>()
+    var MainThemeAudioPlayer = AVAudioPlayer()
+    var mainThemeName:String?
     var orientation = AppOrientationState.Portrait
     var textViewWidthInLandscapeMode: CGFloat?
     
@@ -332,10 +334,7 @@ class ViewController: UIViewController {
             
             createBrackets(state: state)
             createButtons(pageNumber: i, state: state)
-            
-            if ((arrayOfContent[i-1] as! NSDictionary)["audio"] != nil){
-                playMusic(array: (arrayOfContent[i-1] as! NSDictionary)["audio"]! as! [String])
-            }
+    
         case .Landscape:
             if ((arrayOfContent[i-1] as! NSDictionary)["photo"] != nil){
                 addTextView(text: (arrayOfContent[i-1] as! NSDictionary)["text"]! as! String, type: "normal", state: state)
@@ -347,14 +346,30 @@ class ViewController: UIViewController {
             }
             
             createButtons(pageNumber: i, state: state)
-            
-            if ((arrayOfContent[i-1] as! NSDictionary)["audio"] != nil){
-                playMusic(array: (arrayOfContent[i-1] as! NSDictionary)["audio"]! as! [String])
+        }
+        
+        if ((arrayOfContent[i-1] as! NSDictionary)["audio-theme"] != nil){
+            let audio = (arrayOfContent[i-1] as! NSDictionary)["audio-theme"]! as! String
+            if (self.mainThemeName == nil){
+                self.mainThemeName = audio
+                playMusic(array: [audio], isItMainTheme: true)
+            }else if(audio != self.mainThemeName){
+                self.MainThemeAudioPlayer.stop()
+                self.mainThemeName = audio
+                playMusic(array: [audio], isItMainTheme: true)
             }
+        }else{
+            if (self.mainThemeName != nil){
+            self.MainThemeAudioPlayer.stop()
+            }
+            self.mainThemeName = nil
+        }
+        if ((arrayOfContent[i-1] as! NSDictionary)["audio-sounds"] != nil){
+            playMusic(array: (arrayOfContent[i-1] as! NSDictionary)["audio-sounds"]! as! [String], isItMainTheme: false)
         }
     }
     
-    func playMusic(array: [String]){
+    func playMusic(array: [String], isItMainTheme: Bool){
         
         for name in array{
             let path = Bundle.main.path(forResource: name, ofType : "mp3")!
@@ -362,10 +377,14 @@ class ViewController: UIViewController {
             do {
                 let audioPlayer = try AVAudioPlayer(contentsOf: url)
                 
-                audioPlayer.prepareToPlay()
-                audioPlayer.play()
-                
-                arrayOfAudioPlayers.append(audioPlayer)
+                    audioPlayer.prepareToPlay()
+                    audioPlayer.play()
+                if (isItMainTheme == false){
+                    arrayOfAudioPlayers.append(audioPlayer)
+                }else{
+                    audioPlayer.numberOfLoops = 10
+                    self.MainThemeAudioPlayer = audioPlayer
+                }
             } catch let error {
                 print(error.localizedDescription)
             }
