@@ -270,20 +270,37 @@ class ViewController: UIViewController {
     
     @objc func nextPage(){
         
-        for v in self.view.subviews{
-            v.removeFromSuperview()
+        if(presentPage < arrayOfContent.count){
+            for v in self.view.subviews{
+                v.removeFromSuperview()
+            }
+            presentPage += 1
+            createPage(i: presentPage, state: orientation)
+        }else{
+            let alert = UIAlertController(title: "Книга завершена!", message: "Хотите вернуться в начало?", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Да", style: UIAlertActionStyle.default, handler: {
+                action in
+                self.presentPage = 1
+                for v in self.view.subviews{
+                    v.removeFromSuperview()
+                }
+                self.createPage(i: self.presentPage, state: self.orientation)
+            }))
+            alert.addAction(UIAlertAction(title: "Нет", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
-        presentPage += 1
-        createPage(i: presentPage, state: orientation)
     }
     
     @objc func previousPage(){
         
-        for v in self.view.subviews{
-            v.removeFromSuperview()
+        if(presentPage > 1){
+            presentPage -= 1
+            for v in self.view.subviews{
+                v.removeFromSuperview()
+            }
+
+            createPage(i: presentPage, state: orientation)
         }
-        presentPage -= 1
-        createPage(i: presentPage, state: orientation)
     }
     
     func readJson(){
