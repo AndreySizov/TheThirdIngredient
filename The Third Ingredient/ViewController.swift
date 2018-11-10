@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  BookMineCopy
+//  The Third Ingredient
 //
 //  Created by Sergey Korobin on 24/10/2018.
 //  Copyright © 2018 Sergey Korobin. All rights reserved.
@@ -15,7 +15,11 @@ enum AppOrientationState {
     case Landscape
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+    
+    var pickerPageTextField: UITextField!
+    var picker: UIPickerView!
+    
     var arrayOfContent: [Any]!
     var presentPage = 1
     var arrayOfAudioPlayers = Array<AVAudioPlayer>()
@@ -189,11 +193,13 @@ class ViewController: UIViewController {
             rightButton.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
             self.view.addSubview(rightButton)
             
-            let numberButton = UIButton(frame: CGRect(x: self.view.frame.size.width/2 - 25, y: self.view.frame.size.height - 40, width: 50, height: 40))
-            numberButton.setTitle("\(pageNumber)", for: .normal)
-            numberButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 25)
-            numberButton.setTitleColor(UIColor.black, for: .normal)
-            self.view.addSubview(numberButton)
+            pickerPageTextField = UITextField(frame: CGRect(x: self.view.frame.size.width/2 - 25, y: self.view.frame.size.height - 40, width: 50, height: 40))
+            pickerPageTextField.text = "\(pageNumber)"
+            pickerPageTextField.textAlignment = .center
+            pickerPageTextField.font = UIFont(name: "HelveticaNeue-Thin", size: 25)
+            pickerPageTextField.textColor = UIColor.black
+            pickerPageTextField.addTarget(self, action: #selector(showPickerView), for: .editingDidBegin)
+            self.view.addSubview(pickerPageTextField)
         case .Landscape:
             let leftButton = UIButton(frame: CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y, width: self.view.frame.size.width/5, height: self.view.frame.size.height))
             leftButton.addTarget(self, action: #selector(previousPage), for: .touchUpInside)
@@ -205,15 +211,17 @@ class ViewController: UIViewController {
             
             if textViewWidthInLandscapeMode != nil{
                 
-            var x = self.view.frame.size.width/45
-                x += textViewWidthInLandscapeMode!/2
-                x -= 25
+                var x = self.view.frame.size.width/45
+                    x += textViewWidthInLandscapeMode!/2
+                    x -= 25
                 
-            let numberButton = UIButton(frame: CGRect(x: x, y: 0.9*self.view.frame.size.height, width: 50, height: 0.1*self.view.frame.size.height))
-            numberButton.setTitle("\(pageNumber)", for: .normal)
-            numberButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: 25)
-            numberButton.setTitleColor(UIColor.black, for: .normal)
-            self.view.addSubview(numberButton)
+                pickerPageTextField = UITextField(frame: CGRect(x: x, y: 0.9*self.view.frame.size.height, width: 50, height: 0.1*self.view.frame.size.height))
+                pickerPageTextField.text = "\(pageNumber)"
+                pickerPageTextField.textAlignment = .center
+                pickerPageTextField.font = UIFont(name: "HelveticaNeue-Thin", size: 25)
+                pickerPageTextField.textColor = UIColor.black
+                pickerPageTextField.addTarget(self, action: #selector(showPickerView), for: .editingDidBegin)
+                self.view.addSubview(pickerPageTextField)
             }else{
                 print("textView Width not found")
             }
@@ -397,6 +405,64 @@ class ViewController: UIViewController {
             audioPlayer.stop()
         }
         arrayOfAudioPlayers.removeAll()
+    }
+    
+    //
+    // Picker view section
+    //
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return arrayOfContent.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let id = (arrayOfContent[row] as! NSDictionary)["id"]!
+        return String(describing: id)
+    }
+    
+    @objc func showPickerView(){
+        picker = UIPickerView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height/2.5))
+        picker.backgroundColor = UIColor.white
+        picker.showsSelectionIndicator = true
+        picker.delegate = self
+        picker.dataSource = self
+        picker.selectRow(presentPage - 1, inComponent: 0, animated: false)
+        pickerPageTextField.inputView = picker
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneClick))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelClick))
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        pickerPageTextField.inputAccessoryView = toolBar
+    }
+    
+    @objc func doneClick() {
+        let row = picker.selectedRow(inComponent: 0)
+        pickerPageTextField.resignFirstResponder()
+        let id = (arrayOfContent[row] as! NSDictionary)["id"]!
+        
+        presentPage = id as! Int
+        print("Done. Picker Page = \(presentPage)")
+        for v in self.view.subviews{
+            v.removeFromSuperview()
+        }
+        createPage(i: presentPage, state: orientation)
+        
+    }
+    @objc func cancelClick() {
+        pickerPageTextField.resignFirstResponder()
+        print("Cancel in Picker view")
     }
     
     override func didReceiveMemoryWarning() {
