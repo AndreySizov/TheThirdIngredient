@@ -429,7 +429,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     @objc func showPickerView(){
-        picker = UIPickerView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height/2.5))
+        picker = UIPickerView()
         picker.backgroundColor = UIColor.white
         picker.showsSelectionIndicator = true
         picker.delegate = self
