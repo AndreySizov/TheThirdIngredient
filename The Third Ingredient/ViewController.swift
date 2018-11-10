@@ -111,7 +111,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 let x = self.view.frame.origin.x + 2*self.view.frame.size.width/45
                 let y = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 10
                 let upper_height = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 10
-                let height = 0.9*(self.view.frame.size.height - upper_height)
+                let height = 0.88*(self.view.frame.size.height - upper_height)
                 let width = 0.8889*self.view.frame.size.width //*40/45
                 
                 if type == "normal"{
@@ -197,7 +197,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             rightButton.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
             self.view.addSubview(rightButton)
             
-            pickerPageTextField = UITextField(frame: CGRect(x: self.view.frame.size.width/2 - 25, y: self.view.frame.size.height - 40, width: 50, height: 40))
+            var y = self.view.frame.size.height
+            if (self.view.frame.size.height <= 736){
+                y = y - 45
+                
+            }else{
+                y = y - 50
+            }
+            
+            pickerPageTextField = UITextField(frame: CGRect(x: self.view.frame.size.width/2 - 25, y: y, width: 50, height: 40))
             pickerPageTextField.text = "\(pageNumber)"
             pickerPageTextField.textAlignment = .center
             pickerPageTextField.font = UIFont(name: "HelveticaNeue-Thin", size: 25)
@@ -218,8 +226,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 var x = self.view.frame.size.width/45
                     x += textViewWidthInLandscapeMode!/2
                     x -= 25
-                
-                pickerPageTextField = UITextField(frame: CGRect(x: x, y: 0.9*self.view.frame.size.height, width: 50, height: 0.1*self.view.frame.size.height))
+                var y = self.view.frame.size.height
+                if (self.view.frame.size.width <= 736){
+                    y = 0.9*y
+                    
+                }else{
+                    y = 0.88*y
+                }
+                pickerPageTextField = UITextField(frame: CGRect(x: x, y: y, width: 50, height: 0.1*self.view.frame.size.height))
                 pickerPageTextField.text = "\(pageNumber)"
                 pickerPageTextField.textAlignment = .center
                 pickerPageTextField.font = UIFont(name: "HelveticaNeue-Thin", size: 25)
