@@ -9,6 +9,7 @@
 import UIKit
 import AVKit
 import AVFoundation
+import SwiftyGif
 
 enum AppOrientationState {
     case Portrait
@@ -145,8 +146,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             let y = self.view.frame.size.height - 70 - height
             let width = self.view.frame.size.width*0.923    //*24/26
             
-            let view = UIImageView(frame: CGRect(x: x, y: y, width: width, height: height))
-            view.image = UIImage(named:image)
+            let view = UIImageView(gifImage: UIImage(gifName: "\(image).gif"), manager: .defaultManager, loopCount: 1)
+            view.frame = CGRect(x: x, y: y, width: width, height: height)
             view.contentMode = .scaleAspectFit
             self.view.addSubview(view)
         case .Landscape:
@@ -159,9 +160,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     //            let x = (42*self.view.frame.size.width/45)*0.7 + 2*self.view.frame.size.width/45
     //            let width = 0.3*(42*self.view.frame.size.width/45)
                 let height = self.view.frame.size.height - 60
-                let view = UIImageView(frame: CGRect(x: x, y: y, width: width, height: height))
+                let view = UIImageView(gifImage: UIImage(gifName: "\(image).gif"), manager: .defaultManager, loopCount: 1)
 
-                view.image = UIImage(named:image)
+                view.frame = CGRect(x: x, y: y, width: width, height: height)
                 view.contentMode = .scaleAspectFit
                 self.view.addSubview(view)
             }else{
@@ -173,9 +174,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 //            let width = 0.25*(40*self.view.frame.size.width/45)
 
                 let height = self.view.frame.size.height - 60
-                let view = UIImageView(frame: CGRect(x: x, y: y, width: width, height: height))
+                let view = UIImageView(gifImage: UIImage(gifName: "\(image).gif"), manager: .defaultManager, loopCount: 1)
                 
-                view.image = UIImage(named:image)
+                view.frame = CGRect(x: x, y: y, width: width, height: height)
                 view.contentMode = .scaleAspectFit
                 self.view.addSubview(view)
             }

@@ -1,0 +1,6 @@
+framework module Pods_The_Third_Ingredient {
+  umbrella header "Pods-The Third Ingredient-umbrella.h"
+
+  export *
+  module * { export * }
+}

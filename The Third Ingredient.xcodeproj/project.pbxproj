@@ -25,9 +25,14 @@
 		5533157D21F1164600F27FE6 /* RPM-Eternal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5533157C21F1164600F27FE6 /* RPM-Eternal.mp3 */; };
 		5533157F21F1174B00F27FE6 /* RPM-InnerCourage.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5533157E21F1174B00F27FE6 /* RPM-InnerCourage.mp3 */; };
 		5533158121F1182100F27FE6 /* laugh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5533158021F1182100F27FE6 /* laugh.mp3 */; };
+		557DC63B21F7AD5D0089B638 /* cooking.gif in Resources */ = {isa = PBXBuildFile; fileRef = 557DC63721F7AD5D0089B638 /* cooking.gif */; };
+		557DC63C21F7AD5D0089B638 /* house.gif in Resources */ = {isa = PBXBuildFile; fileRef = 557DC63821F7AD5D0089B638 /* house.gif */; };
+		557DC63D21F7AD5D0089B638 /* woman.gif in Resources */ = {isa = PBXBuildFile; fileRef = 557DC63921F7AD5D0089B638 /* woman.gif */; };
+		557DC63E21F7AD5D0089B638 /* potatoPeeling.gif in Resources */ = {isa = PBXBuildFile; fileRef = 557DC63A21F7AD5D0089B638 /* potatoPeeling.gif */; };
 		55A527372167BEAA00A1782C /* BookJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 55A527362167BEAA00A1782C /* BookJson.json */; };
 		55AF826B217E09E600EF608E /* steps.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55AF8269217E09E600EF608E /* steps.mp3 */; };
 		55AF826C217E09E600EF608E /* romantic-piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55AF826A217E09E600EF608E /* romantic-piano.mp3 */; };
+		E7C2C65BD63D2563E11806D7 /* Pods_The_Third_Ingredient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD19C7D72960E30C5D83CE57 /* Pods_The_Third_Ingredient.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,9 +56,16 @@
 		5533157C21F1164600F27FE6 /* RPM-Eternal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "RPM-Eternal.mp3"; sourceTree = "<group>"; };
 		5533157E21F1174B00F27FE6 /* RPM-InnerCourage.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "RPM-InnerCourage.mp3"; sourceTree = "<group>"; };
 		5533158021F1182100F27FE6 /* laugh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = laugh.mp3; sourceTree = "<group>"; };
+		557DC63721F7AD5D0089B638 /* cooking.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = cooking.gif; sourceTree = "<group>"; };
+		557DC63821F7AD5D0089B638 /* house.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = house.gif; sourceTree = "<group>"; };
+		557DC63921F7AD5D0089B638 /* woman.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = woman.gif; sourceTree = "<group>"; };
+		557DC63A21F7AD5D0089B638 /* potatoPeeling.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = potatoPeeling.gif; sourceTree = "<group>"; };
 		55A527362167BEAA00A1782C /* BookJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BookJson.json; sourceTree = "<group>"; };
 		55AF8269217E09E600EF608E /* steps.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = steps.mp3; sourceTree = "<group>"; };
 		55AF826A217E09E600EF608E /* romantic-piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "romantic-piano.mp3"; sourceTree = "<group>"; };
+		9F4B0C9F1C2F1B909A018022 /* Pods-The Third Ingredient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Third Ingredient.release.xcconfig"; path = "Pods/Target Support Files/Pods-The Third Ingredient/Pods-The Third Ingredient.release.xcconfig"; sourceTree = "<group>"; };
+		B38CD81EBF3115AEB054FD49 /* Pods-The Third Ingredient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Third Ingredient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-The Third Ingredient/Pods-The Third Ingredient.debug.xcconfig"; sourceTree = "<group>"; };
+		DD19C7D72960E30C5D83CE57 /* Pods_The_Third_Ingredient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Third_Ingredient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7C2C65BD63D2563E11806D7 /* Pods_The_Third_Ingredient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +106,8 @@
 			children = (
 				5516CD4E2162E001007C28F7 /* The Third Ingredient */,
 				5516CD4D2162E001007C28F7 /* Products */,
+				5EFDAE2BEAA69A78D321DD14 /* Pods */,
+				B8D4EAF364E51DA4D81B8289 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +122,7 @@
 		5516CD4E2162E001007C28F7 /* The Third Ingredient */ = {
 			isa = PBXGroup;
 			children = (
+				557DC63621F7AD1C0089B638 /* gif */,
 				550F624321726EDA00B5D5EB /* audio */,
 				55A527362167BEAA00A1782C /* BookJson.json */,
 				5516CD4F2162E001007C28F7 /* AppDelegate.swift */,
@@ -120,6 +136,34 @@
 			path = "The Third Ingredient";
 			sourceTree = "<group>";
 		};
+		557DC63621F7AD1C0089B638 /* gif */ = {
+			isa = PBXGroup;
+			children = (
+				557DC63721F7AD5D0089B638 /* cooking.gif */,
+				557DC63821F7AD5D0089B638 /* house.gif */,
+				557DC63921F7AD5D0089B638 /* woman.gif */,
+				557DC63A21F7AD5D0089B638 /* potatoPeeling.gif */,
+			);
+			path = gif;
+			sourceTree = "<group>";
+		};
+		5EFDAE2BEAA69A78D321DD14 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B38CD81EBF3115AEB054FD49 /* Pods-The Third Ingredient.debug.xcconfig */,
+				9F4B0C9F1C2F1B909A018022 /* Pods-The Third Ingredient.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B8D4EAF364E51DA4D81B8289 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD19C7D72960E30C5D83CE57 /* Pods_The_Third_Ingredient.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -127,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5516CD612162E001007C28F7 /* Build configuration list for PBXNativeTarget "The Third Ingredient" */;
 			buildPhases = (
+				06380A7CE29E592DE1F1C663 /* [CP] Check Pods Manifest.lock */,
 				5516CD482162E001007C28F7 /* Sources */,
 				5516CD492162E001007C28F7 /* Frameworks */,
 				5516CD4A2162E001007C28F7 /* Resources */,
+				72B5E307AE8E6913F6A9AAF7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -179,14 +225,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				557DC63D21F7AD5D0089B638 /* woman.gif in Resources */,
 				5533157F21F1174B00F27FE6 /* RPM-InnerCourage.mp3 in Resources */,
 				55AF826B217E09E600EF608E /* steps.mp3 in Resources */,
 				5516CD5D2162E001007C28F7 /* LaunchScreen.storyboard in Resources */,
 				5533157321F10FA100F27FE6 /* water.mp3 in Resources */,
 				5533157121F10ECD00F27FE6 /* dishes.mp3 in Resources */,
+				557DC63C21F7AD5D0089B638 /* house.gif in Resources */,
 				5533156F21F10DB500F27FE6 /* coin.mp3 in Resources */,
 				550F6245217278AE00B5D5EB /* pencil.mp3 in Resources */,
+				557DC63E21F7AD5D0089B638 /* potatoPeeling.gif in Resources */,
 				5516CD5A2162E001007C28F7 /* Assets.xcassets in Resources */,
+				557DC63B21F7AD5D0089B638 /* cooking.gif in Resources */,
 				5533157921F114EE00F27FE6 /* splash.mp3 in Resources */,
 				55A527372167BEAA00A1782C /* BookJson.json in Resources */,
 				5533158121F1182100F27FE6 /* laugh.mp3 in Resources */,
@@ -201,6 +251,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06380A7CE29E592DE1F1C663 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-The Third Ingredient-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72B5E307AE8E6913F6A9AAF7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-The Third Ingredient/Pods-The Third Ingredient-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-The Third Ingredient/Pods-The Third Ingredient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5516CD482162E001007C28F7 /* Sources */ = {
@@ -344,6 +433,7 @@
 		};
 		5516CD622162E001007C28F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B38CD81EBF3115AEB054FD49 /* Pods-The Third Ingredient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -360,6 +450,7 @@
 		};
 		5516CD632162E001007C28F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F4B0C9F1C2F1B909A018022 /* Pods-The Third Ingredient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
