@@ -15,6 +15,16 @@
 		5516CD582162E001007C28F7 /* The_Third_Ingredient.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5516CD562162E001007C28F7 /* The_Third_Ingredient.xcdatamodeld */; };
 		5516CD5A2162E001007C28F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5516CD592162E001007C28F7 /* Assets.xcassets */; };
 		5516CD5D2162E001007C28F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5516CD5B2162E001007C28F7 /* LaunchScreen.storyboard */; };
+		5533156F21F10DB500F27FE6 /* coin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5533156E21F10DB500F27FE6 /* coin.mp3 */; };
+		5533157121F10ECD00F27FE6 /* dishes.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5533157021F10ECD00F27FE6 /* dishes.mp3 */; };
+		5533157321F10FA100F27FE6 /* water.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5533157221F10FA100F27FE6 /* water.mp3 */; };
+		5533157521F1103D00F27FE6 /* peeling.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5533157421F1103D00F27FE6 /* peeling.mp3 */; };
+		5533157721F1123A00F27FE6 /* RPM-Consort.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5533157621F1123A00F27FE6 /* RPM-Consort.mp3 */; };
+		5533157921F114EE00F27FE6 /* splash.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5533157821F114EE00F27FE6 /* splash.mp3 */; };
+		5533157B21F1159800F27FE6 /* soup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5533157A21F1159700F27FE6 /* soup.mp3 */; };
+		5533157D21F1164600F27FE6 /* RPM-Eternal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5533157C21F1164600F27FE6 /* RPM-Eternal.mp3 */; };
+		5533157F21F1174B00F27FE6 /* RPM-InnerCourage.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5533157E21F1174B00F27FE6 /* RPM-InnerCourage.mp3 */; };
+		5533158121F1182100F27FE6 /* laugh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5533158021F1182100F27FE6 /* laugh.mp3 */; };
 		55A527372167BEAA00A1782C /* BookJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 55A527362167BEAA00A1782C /* BookJson.json */; };
 		55AF826B217E09E600EF608E /* steps.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55AF8269217E09E600EF608E /* steps.mp3 */; };
 		55AF826C217E09E600EF608E /* romantic-piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55AF826A217E09E600EF608E /* romantic-piano.mp3 */; };
@@ -31,6 +41,16 @@
 		5516CD592162E001007C28F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5516CD5C2162E001007C28F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5516CD5E2162E001007C28F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5533156E21F10DB500F27FE6 /* coin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coin.mp3; sourceTree = "<group>"; };
+		5533157021F10ECD00F27FE6 /* dishes.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dishes.mp3; sourceTree = "<group>"; };
+		5533157221F10FA100F27FE6 /* water.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = water.mp3; sourceTree = "<group>"; };
+		5533157421F1103D00F27FE6 /* peeling.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = peeling.mp3; sourceTree = "<group>"; };
+		5533157621F1123A00F27FE6 /* RPM-Consort.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "RPM-Consort.mp3"; sourceTree = "<group>"; };
+		5533157821F114EE00F27FE6 /* splash.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = splash.mp3; sourceTree = "<group>"; };
+		5533157A21F1159700F27FE6 /* soup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soup.mp3; sourceTree = "<group>"; };
+		5533157C21F1164600F27FE6 /* RPM-Eternal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "RPM-Eternal.mp3"; sourceTree = "<group>"; };
+		5533157E21F1174B00F27FE6 /* RPM-InnerCourage.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "RPM-InnerCourage.mp3"; sourceTree = "<group>"; };
+		5533158021F1182100F27FE6 /* laugh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = laugh.mp3; sourceTree = "<group>"; };
 		55A527362167BEAA00A1782C /* BookJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BookJson.json; sourceTree = "<group>"; };
 		55AF8269217E09E600EF608E /* steps.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = steps.mp3; sourceTree = "<group>"; };
 		55AF826A217E09E600EF608E /* romantic-piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "romantic-piano.mp3"; sourceTree = "<group>"; };
@@ -50,6 +70,16 @@
 		550F624321726EDA00B5D5EB /* audio */ = {
 			isa = PBXGroup;
 			children = (
+				5533158021F1182100F27FE6 /* laugh.mp3 */,
+				5533157E21F1174B00F27FE6 /* RPM-InnerCourage.mp3 */,
+				5533157C21F1164600F27FE6 /* RPM-Eternal.mp3 */,
+				5533157A21F1159700F27FE6 /* soup.mp3 */,
+				5533157821F114EE00F27FE6 /* splash.mp3 */,
+				5533157621F1123A00F27FE6 /* RPM-Consort.mp3 */,
+				5533157421F1103D00F27FE6 /* peeling.mp3 */,
+				5533157221F10FA100F27FE6 /* water.mp3 */,
+				5533157021F10ECD00F27FE6 /* dishes.mp3 */,
+				5533156E21F10DB500F27FE6 /* coin.mp3 */,
 				55AF826A217E09E600EF608E /* romantic-piano.mp3 */,
 				55AF8269217E09E600EF608E /* steps.mp3 */,
 				550F6244217278AE00B5D5EB /* pencil.mp3 */,
@@ -149,14 +179,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5533157F21F1174B00F27FE6 /* RPM-InnerCourage.mp3 in Resources */,
 				55AF826B217E09E600EF608E /* steps.mp3 in Resources */,
 				5516CD5D2162E001007C28F7 /* LaunchScreen.storyboard in Resources */,
+				5533157321F10FA100F27FE6 /* water.mp3 in Resources */,
+				5533157121F10ECD00F27FE6 /* dishes.mp3 in Resources */,
+				5533156F21F10DB500F27FE6 /* coin.mp3 in Resources */,
 				550F6245217278AE00B5D5EB /* pencil.mp3 in Resources */,
 				5516CD5A2162E001007C28F7 /* Assets.xcassets in Resources */,
+				5533157921F114EE00F27FE6 /* splash.mp3 in Resources */,
 				55A527372167BEAA00A1782C /* BookJson.json in Resources */,
+				5533158121F1182100F27FE6 /* laugh.mp3 in Resources */,
 				5516CD552162E001007C28F7 /* Main.storyboard in Resources */,
+				5533157521F1103D00F27FE6 /* peeling.mp3 in Resources */,
+				5533157B21F1159800F27FE6 /* soup.mp3 in Resources */,
+				5533157D21F1164600F27FE6 /* RPM-Eternal.mp3 in Resources */,
 				550F624221726ECB00B5D5EB /* happy-piano.mp3 in Resources */,
 				55AF826C217E09E600EF608E /* romantic-piano.mp3 in Resources */,
+				5533157721F1123A00F27FE6 /* RPM-Consort.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -294,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -314,7 +354,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "apple.The-Third-Ingredient";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -330,7 +370,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "apple.The-Third-Ingredient";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
