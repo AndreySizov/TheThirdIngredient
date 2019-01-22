@@ -37,11 +37,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return true
     }
     
-    override func viewWillLayoutSubviews() {
-        getOrientation()
-        createPage(i: presentPage, state: orientation)
-    }
-    
     func getOrientation(){
         if UIDevice.current.orientation.isPortrait{
             self.orientation = .Portrait
@@ -52,11 +47,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         for v in self.view.subviews{
             v.removeFromSuperview()
         }
+        getOrientation()
+        createPage(i: presentPage, state: orientation)
     }
     
     
