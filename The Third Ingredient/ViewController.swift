@@ -67,12 +67,23 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             let width = self.view.frame.size.width*0.923    //*24/26
             let height = self.view.frame.size.height - 134 //-19-15-60-40
             
+            var extraSpaceForY = 0
+            var extraSpaceForHeight = 0
+            if(self.view.frame.size.height < 667){
+                extraSpaceForY = 18
+                extraSpaceForHeight = 26
+            }else if (self.view.frame.size.height < 812){
+                extraSpaceForY = 10
+                extraSpaceForHeight = 10
+            }
+            
             if type == "normal"{
                 
-                view = UITextView(frame: CGRect(x: x, y: y, width: width, height: 0.7*height))
+                view = UITextView(frame: CGRect(x: x, y: y - CGFloat(extraSpaceForY), width: width, height: 0.7*height + CGFloat(extraSpaceForHeight)))
             }else{
-                view = UITextView(frame: CGRect(x: x, y: y, width: width, height: height))
+                view = UITextView(frame: CGRect(x: x, y: y - CGFloat(extraSpaceForY), width: width, height: height + CGFloat(extraSpaceForHeight)))
             }
+            
             if(self.view.frame.size.height < 667){
                 view.font = UIFont(name: "AmericanTypewriter", size: 12)
             }else if (self.view.frame.size.height < 736){
@@ -147,7 +158,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             let width = self.view.frame.size.width*0.923    //*24/26
             
             let view = UIImageView(gifImage: UIImage(gifName: "\(image).gif"), manager: .defaultManager, loopCount: 1)
-            view.frame = CGRect(x: x, y: y, width: width, height: height)
+            if(self.view.frame.size.height < 667){
+                view.frame = CGRect(x: x, y: y+8, width: width, height: height)
+            }else{
+                view.frame = CGRect(x: x, y: y, width: width, height: height)
+            }
             view.contentMode = .scaleAspectFit
             self.view.addSubview(view)
         case .Landscape:
@@ -248,12 +263,22 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         switch state {
         case .Portrait:
             
-            let bracketUp = UIImageView(frame: CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y + 19 + 15, width: self.view.frame.size.width, height: 30))
+            var heightForBracket = 30
+            var extraSpaceUp = 5
+            var extraSpaceDown = 0
+            if(self.view.frame.size.height < 667){
+                heightForBracket = 22
+                extraSpaceDown = 8
+            }else if (self.view.frame.size.height >= 812){
+                extraSpaceUp = 15
+            }
+            
+            let bracketUp = UIImageView(frame: CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y + 19 + CGFloat(extraSpaceUp), width: self.view.frame.size.width, height: CGFloat(heightForBracket)))
             bracketUp.image = UIImage(named:"bracketUp")
             bracketUp.contentMode = .scaleAspectFit
             self.view.addSubview(bracketUp)
-
-            let bracketDown = UIImageView(frame: CGRect(x: self.view.frame.origin.x, y: self.view.frame.size.height - 30 - 40, width: self.view.frame.size.width, height: 30))
+            
+            let bracketDown = UIImageView(frame: CGRect(x: self.view.frame.origin.x, y: self.view.frame.size.height - 30 - 40 + CGFloat(extraSpaceDown), width: self.view.frame.size.width, height: CGFloat(heightForBracket)))
             bracketDown.image = UIImage(named:"bracketDown")
             bracketDown.contentMode = .scaleAspectFit
             self.view.addSubview(bracketDown)
