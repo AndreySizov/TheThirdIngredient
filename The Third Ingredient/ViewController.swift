@@ -26,6 +26,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var arrayOfAudioPlayers = Array<AVAudioPlayer>()
     var MainThemeAudioPlayer = AVAudioPlayer()
     var mainThemeName:String?
+    var pauseThemeDuration: TimeInterval!
+    var pauseSoundDuration: TimeInterval!
     var orientation = AppOrientationState.Portrait
     var textViewWidthInLandscapeMode: CGFloat?
     
@@ -348,7 +350,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             for v in self.view.subviews{
                 v.removeFromSuperview()
             }
-
+        
             createPage(i: presentPage, state: orientation)
         }
     }
@@ -397,23 +399,49 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         
         if ((arrayOfContent[i-1] as! NSDictionary)["audio-theme"] != nil){
-            let audio = (arrayOfContent[i-1] as! NSDictionary)["audio-theme"]! as! String
-            if (self.mainThemeName == nil){
-                self.mainThemeName = audio
-                playMusic(array: [audio], isItMainTheme: true)
-            }else if(audio != self.mainThemeName){
-                self.MainThemeAudioPlayer.stop()
-                self.mainThemeName = audio
-                playMusic(array: [audio], isItMainTheme: true)
+            let audioTheme = (arrayOfContent[i-1] as! NSDictionary)["audio-theme"]! as! [String]
+            for item in audioTheme{
+                if item.contains("pause"){
+                    let pauseStr = item.split(separator: "|")
+                    pauseThemeDuration = Double(Int(pauseStr[1])!)
+                    continue
+                } else {
+                    if (self.mainThemeName == nil){
+                        self.mainThemeName = item
+                        playMusic(array: [item], isItMainTheme: true)
+                    }else if (item != self.mainThemeName){
+                        self.MainThemeAudioPlayer.stop()
+                        self.mainThemeName = item
+                        playMusic(array: [item], isItMainTheme: true)
+                    } else if (item == self.mainThemeName && pauseSoundDuration == -1.0) || (item == self.mainThemeName && pauseThemeDuration > 0.0){
+                        // case if user moving from page with timer (to that point of time it is not fired) to the page with the same maintheme
+                        // or
+                        // case if user moving from page with no timer to page with timer and with the same maintheme
+                        playMusic(array: [item], isItMainTheme: true)
+                    }
+                }
             }
+            
         }else{
             if (self.mainThemeName != nil){
             self.MainThemeAudioPlayer.stop()
             }
             self.mainThemeName = nil
         }
+        
         if ((arrayOfContent[i-1] as! NSDictionary)["audio-sounds"] != nil){
-            playMusic(array: (arrayOfContent[i-1] as! NSDictionary)["audio-sounds"]! as! [String], isItMainTheme: false)
+            let audioSounds = (arrayOfContent[i-1] as! NSDictionary)["audio-sounds"] as! [String]
+            var sounds: [String] = []
+            for item in audioSounds{
+                if item.contains("pause"){
+                    let pauseStr = item.split(separator: "|")
+                    pauseSoundDuration = Double(Int(pauseStr[1])!)
+                    continue
+                } else {
+                    sounds.append(item)
+                }
+            }
+            playMusic(array: sounds, isItMainTheme: false)
         }
     }
     
@@ -424,12 +452,24 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             let url = URL(fileURLWithPath : path)
             do {
                 let audioPlayer = try AVAudioPlayer(contentsOf: url)
-                
-                    audioPlayer.prepareToPlay()
-                    audioPlayer.play()
                 if (isItMainTheme == false){
+                    if pauseSoundDuration != nil && pauseSoundDuration > 0.0 {
+                        audioPlayer.prepareToPlay()
+                        audioPlayer.play(atTime: audioPlayer.deviceCurrentTime + pauseSoundDuration)
+                    } else {
+                        audioPlayer.prepareToPlay()
+                        audioPlayer.play()
+                    }
                     arrayOfAudioPlayers.append(audioPlayer)
                 }else{
+                    if pauseThemeDuration != nil && pauseThemeDuration > 0.0 {
+                        audioPlayer.prepareToPlay()
+                        audioPlayer.play(atTime: audioPlayer.deviceCurrentTime + pauseThemeDuration)
+                        
+                    } else {
+                        audioPlayer.prepareToPlay()
+                        audioPlayer.play()
+                    }
                     audioPlayer.numberOfLoops = 10
                     self.MainThemeAudioPlayer = audioPlayer
                 }
@@ -437,7 +477,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 print(error.localizedDescription)
             }
         }
-        
+        // setting timers to specific value to catch 
+        pauseSoundDuration = -1.0
+        pauseThemeDuration = -1.0
     }
     
     func stopMusic(){
