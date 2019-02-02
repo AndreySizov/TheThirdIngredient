@@ -28,6 +28,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var mainThemeName:String?
     var pauseThemeDuration: TimeInterval!
     var pauseSoundDuration: TimeInterval!
+    var pauseTimer: Timer?
     var orientation = AppOrientationState.Portrait
     var textViewWidthInLandscapeMode: CGFloat?
     
@@ -373,6 +374,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func createPage(i:Int, state:AppOrientationState){
         stopMusic()
         
+        if pauseTimer != nil {
+            if pauseThemeDuration != nil {
+                pauseThemeDuration = nil
+            }
+        }
+        
         switch state {
         case .Portrait:
             if ((arrayOfContent[i-1] as! NSDictionary)["photo"] != nil){
@@ -413,11 +420,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                         self.MainThemeAudioPlayer.stop()
                         self.mainThemeName = item
                         playMusic(array: [item], isItMainTheme: true)
-                    } else if (item == self.mainThemeName && pauseSoundDuration == -1.0) || (item == self.mainThemeName && pauseThemeDuration > 0.0){
-                        // case if user moving from page with timer (to that point of time it is not fired) to the page with the same maintheme
-                        // or
-                        // case if user moving from page with no timer to page with timer and with the same maintheme
-                        playMusic(array: [item], isItMainTheme: true)
+                    } else {
+                        // there -> item == self.mainThemeName && self.mainThemeName != nil
+                        if (pauseTimer != nil){
+                            // case if user moving from page with timer (to that point of time it is not fired) to the page with the same maintheme
+                            pauseTimer?.invalidate()
+                            pauseTimer = nil
+                            playMusic(array: [item], isItMainTheme: true)
+                        } else if (pauseThemeDuration != nil && pauseThemeDuration > 0.0){
+                            // case if user moving from page with no timer to page with timer and with the same maintheme
+                            playMusic(array: [item], isItMainTheme: true)
+                            
+                        }
                     }
                 }
             }
@@ -465,7 +479,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     if pauseThemeDuration != nil && pauseThemeDuration > 0.0 {
                         audioPlayer.prepareToPlay()
                         audioPlayer.play(atTime: audioPlayer.deviceCurrentTime + pauseThemeDuration)
-                        
+                        // setting up timer
+                        pauseTimer = Timer.scheduledTimer(timeInterval: pauseThemeDuration, target: self, selector: #selector(refreshPauseTimerAction), userInfo: nil, repeats: false)
                     } else {
                         audioPlayer.prepareToPlay()
                         audioPlayer.play()
@@ -477,9 +492,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 print(error.localizedDescription)
             }
         }
-        // setting timers to specific value to catch 
-        pauseSoundDuration = -1.0
-        pauseThemeDuration = -1.0
     }
     
     func stopMusic(){
@@ -487,6 +499,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             audioPlayer.stop()
         }
         arrayOfAudioPlayers.removeAll()
+    }
+    
+    @objc func refreshPauseTimerAction(){
+        pauseThemeDuration = nil
+        pauseTimer = nil
     }
     
     //
