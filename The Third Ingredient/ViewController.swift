@@ -415,21 +415,21 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 } else {
                     if (self.mainThemeName == nil){
                         self.mainThemeName = item
-                        playMusic(array: [item], isItMainTheme: true)
+                        playMusic(sound: item, isItMainTheme: true)
                     }else if (item != self.mainThemeName){
                         self.MainThemeAudioPlayer.stop()
                         self.mainThemeName = item
-                        playMusic(array: [item], isItMainTheme: true)
+                        playMusic(sound: item, isItMainTheme: true)
                     } else {
                         // there -> item == self.mainThemeName && self.mainThemeName != nil
                         if (pauseTimer != nil){
                             // case if user moving from page with timer (to that point of time it is not fired) to the page with the same maintheme
                             pauseTimer?.invalidate()
                             pauseTimer = nil
-                            playMusic(array: [item], isItMainTheme: true)
+                            playMusic(sound: item, isItMainTheme: true)
                         } else if (pauseThemeDuration != nil && pauseThemeDuration > 0.0){
                             // case if user moving from page with no timer to page with timer and with the same maintheme
-                            playMusic(array: [item], isItMainTheme: true)
+                            playMusic(sound: item, isItMainTheme: true)
                             
                         }
                     }
@@ -445,52 +445,49 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         if ((arrayOfContent[i-1] as! NSDictionary)["audio-sounds"] != nil){
             let audioSounds = (arrayOfContent[i-1] as! NSDictionary)["audio-sounds"] as! [String]
-            var sounds: [String] = []
             for item in audioSounds{
                 if item.contains("pause"){
                     let pauseStr = item.split(separator: "|")
                     pauseSoundDuration = Double(Int(pauseStr[1])!)
                     continue
                 } else {
-                    sounds.append(item)
+                    playMusic(sound: item, isItMainTheme: false)
                 }
             }
-            playMusic(array: sounds, isItMainTheme: false)
         }
     }
     
-    func playMusic(array: [String], isItMainTheme: Bool){
-        
-        for name in array{
-            let path = Bundle.main.path(forResource: name, ofType : "mp3")!
-            let url = URL(fileURLWithPath : path)
-            do {
-                let audioPlayer = try AVAudioPlayer(contentsOf: url)
-                if (isItMainTheme == false){
-                    if pauseSoundDuration != nil && pauseSoundDuration > 0.0 {
-                        audioPlayer.prepareToPlay()
-                        audioPlayer.play(atTime: audioPlayer.deviceCurrentTime + pauseSoundDuration)
-                    } else {
-                        audioPlayer.prepareToPlay()
-                        audioPlayer.play()
-                    }
-                    arrayOfAudioPlayers.append(audioPlayer)
-                }else{
-                    if pauseThemeDuration != nil && pauseThemeDuration > 0.0 {
-                        audioPlayer.prepareToPlay()
-                        audioPlayer.play(atTime: audioPlayer.deviceCurrentTime + pauseThemeDuration)
-                        // setting up timer
-                        pauseTimer = Timer.scheduledTimer(timeInterval: pauseThemeDuration, target: self, selector: #selector(refreshPauseTimerAction), userInfo: nil, repeats: false)
-                    } else {
-                        audioPlayer.prepareToPlay()
-                        audioPlayer.play()
-                    }
-                    audioPlayer.numberOfLoops = 10
-                    self.MainThemeAudioPlayer = audioPlayer
+    func playMusic(sound: String, isItMainTheme: Bool){
+    
+        let path = Bundle.main.path(forResource: sound, ofType : "mp3")!
+        let url = URL(fileURLWithPath : path)
+        do {
+            let audioPlayer = try AVAudioPlayer(contentsOf: url)
+            if (isItMainTheme == false){
+                if pauseSoundDuration != nil && pauseSoundDuration > 0.0 {
+                    audioPlayer.prepareToPlay()
+                    audioPlayer.play(atTime: audioPlayer.deviceCurrentTime + pauseSoundDuration)
+                    pauseSoundDuration = nil
+                } else {
+                    audioPlayer.prepareToPlay()
+                    audioPlayer.play()
                 }
-            } catch let error {
-                print(error.localizedDescription)
+                arrayOfAudioPlayers.append(audioPlayer)
+            }else{
+                if pauseThemeDuration != nil && pauseThemeDuration > 0.0 {
+                    audioPlayer.prepareToPlay()
+                    audioPlayer.play(atTime: audioPlayer.deviceCurrentTime + pauseThemeDuration)
+                    // setting up timer
+                    pauseTimer = Timer.scheduledTimer(timeInterval: pauseThemeDuration, target: self, selector: #selector(refreshPauseTimerAction), userInfo: nil, repeats: false)
+                } else {
+                    audioPlayer.prepareToPlay()
+                    audioPlayer.play()
+                }
+                audioPlayer.numberOfLoops = 10
+                self.MainThemeAudioPlayer = audioPlayer
             }
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
     
