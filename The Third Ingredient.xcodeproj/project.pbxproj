@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55039FFA2208B5E6007316FE /* womanHam.gif in Resources */ = {isa = PBXBuildFile; fileRef = 55039FF92208B5E6007316FE /* womanHam.gif */; };
+		5503A0082208B685007316FE /* onionDiagonal.gif in Resources */ = {isa = PBXBuildFile; fileRef = 55039FFB2208B684007316FE /* onionDiagonal.gif */; };
+		5503A0092208B685007316FE /* ham.gif in Resources */ = {isa = PBXBuildFile; fileRef = 55039FFC2208B684007316FE /* ham.gif */; };
+		5503A00A2208B685007316FE /* onionPotatoWaltzShining.gif in Resources */ = {isa = PBXBuildFile; fileRef = 55039FFD2208B684007316FE /* onionPotatoWaltzShining.gif */; };
+		5503A00B2208B685007316FE /* womanAndMan.gif in Resources */ = {isa = PBXBuildFile; fileRef = 55039FFE2208B684007316FE /* womanAndMan.gif */; };
+		5503A00C2208B685007316FE /* hamTable.gif in Resources */ = {isa = PBXBuildFile; fileRef = 55039FFF2208B684007316FE /* hamTable.gif */; };
+		5503A00D2208B685007316FE /* onionWaltz.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5503A0002208B684007316FE /* onionWaltz.gif */; };
+		5503A00E2208B685007316FE /* manHat.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5503A0012208B685007316FE /* manHat.gif */; };
+		5503A00F2208B685007316FE /* man.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5503A0022208B685007316FE /* man.gif */; };
+		5503A0102208B685007316FE /* manStairsOnion.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5503A0032208B685007316FE /* manStairsOnion.gif */; };
+		5503A0112208B685007316FE /* onionPotatoHamShining.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5503A0042208B685007316FE /* onionPotatoHamShining.gif */; };
+		5503A0122208B685007316FE /* hamEggs.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5503A0052208B685007316FE /* hamEggs.gif */; };
+		5503A0132208B685007316FE /* twoPotatoes.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5503A0062208B685007316FE /* twoPotatoes.gif */; };
+		5503A0142208B685007316FE /* hamOnionShining.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5503A0072208B685007316FE /* hamOnionShining.gif */; };
 		550F624221726ECB00B5D5EB /* happy-piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 550F624121726ECA00B5D5EB /* happy-piano.mp3 */; };
 		550F6245217278AE00B5D5EB /* pencil.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 550F6244217278AE00B5D5EB /* pencil.mp3 */; };
 		5516CD502162E001007C28F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5516CD4F2162E001007C28F7 /* AppDelegate.swift */; };
@@ -36,6 +50,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		55039FF92208B5E6007316FE /* womanHam.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = womanHam.gif; sourceTree = "<group>"; };
+		55039FFB2208B684007316FE /* onionDiagonal.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = onionDiagonal.gif; sourceTree = "<group>"; };
+		55039FFC2208B684007316FE /* ham.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ham.gif; sourceTree = "<group>"; };
+		55039FFD2208B684007316FE /* onionPotatoWaltzShining.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = onionPotatoWaltzShining.gif; sourceTree = "<group>"; };
+		55039FFE2208B684007316FE /* womanAndMan.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = womanAndMan.gif; sourceTree = "<group>"; };
+		55039FFF2208B684007316FE /* hamTable.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hamTable.gif; sourceTree = "<group>"; };
+		5503A0002208B684007316FE /* onionWaltz.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = onionWaltz.gif; sourceTree = "<group>"; };
+		5503A0012208B685007316FE /* manHat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = manHat.gif; sourceTree = "<group>"; };
+		5503A0022208B685007316FE /* man.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = man.gif; sourceTree = "<group>"; };
+		5503A0032208B685007316FE /* manStairsOnion.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = manStairsOnion.gif; sourceTree = "<group>"; };
+		5503A0042208B685007316FE /* onionPotatoHamShining.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = onionPotatoHamShining.gif; sourceTree = "<group>"; };
+		5503A0052208B685007316FE /* hamEggs.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hamEggs.gif; sourceTree = "<group>"; };
+		5503A0062208B685007316FE /* twoPotatoes.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = twoPotatoes.gif; sourceTree = "<group>"; };
+		5503A0072208B685007316FE /* hamOnionShining.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hamOnionShining.gif; sourceTree = "<group>"; };
 		550F624121726ECA00B5D5EB /* happy-piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "happy-piano.mp3"; sourceTree = "<group>"; };
 		550F6244217278AE00B5D5EB /* pencil.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pencil.mp3; sourceTree = "<group>"; };
 		5516CD4C2162E001007C28F7 /* The Third Ingredient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Third Ingredient.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +167,20 @@
 		557DC63621F7AD1C0089B638 /* gif */ = {
 			isa = PBXGroup;
 			children = (
+				55039FFC2208B684007316FE /* ham.gif */,
+				5503A0052208B685007316FE /* hamEggs.gif */,
+				5503A0072208B685007316FE /* hamOnionShining.gif */,
+				55039FFF2208B684007316FE /* hamTable.gif */,
+				5503A0022208B685007316FE /* man.gif */,
+				5503A0012208B685007316FE /* manHat.gif */,
+				5503A0032208B685007316FE /* manStairsOnion.gif */,
+				55039FFB2208B684007316FE /* onionDiagonal.gif */,
+				5503A0042208B685007316FE /* onionPotatoHamShining.gif */,
+				55039FFD2208B684007316FE /* onionPotatoWaltzShining.gif */,
+				5503A0002208B684007316FE /* onionWaltz.gif */,
+				5503A0062208B685007316FE /* twoPotatoes.gif */,
+				55039FFE2208B684007316FE /* womanAndMan.gif */,
+				55039FF92208B5E6007316FE /* womanHam.gif */,
 				557DC63721F7AD5D0089B638 /* cooking.gif */,
 				557DC63821F7AD5D0089B638 /* house.gif */,
 				557DC63921F7AD5D0089B638 /* woman.gif */,
@@ -225,25 +267,39 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5503A0132208B685007316FE /* twoPotatoes.gif in Resources */,
+				5503A00D2208B685007316FE /* onionWaltz.gif in Resources */,
+				5503A00E2208B685007316FE /* manHat.gif in Resources */,
+				55039FFA2208B5E6007316FE /* womanHam.gif in Resources */,
+				5503A0142208B685007316FE /* hamOnionShining.gif in Resources */,
 				557DC63D21F7AD5D0089B638 /* woman.gif in Resources */,
 				5533157F21F1174B00F27FE6 /* RPM-InnerCourage.mp3 in Resources */,
 				55AF826B217E09E600EF608E /* steps.mp3 in Resources */,
+				5503A0092208B685007316FE /* ham.gif in Resources */,
+				5503A0122208B685007316FE /* hamEggs.gif in Resources */,
 				5516CD5D2162E001007C28F7 /* LaunchScreen.storyboard in Resources */,
 				5533157321F10FA100F27FE6 /* water.mp3 in Resources */,
+				5503A00B2208B685007316FE /* womanAndMan.gif in Resources */,
 				5533157121F10ECD00F27FE6 /* dishes.mp3 in Resources */,
+				5503A0102208B685007316FE /* manStairsOnion.gif in Resources */,
 				557DC63C21F7AD5D0089B638 /* house.gif in Resources */,
 				5533156F21F10DB500F27FE6 /* coin.mp3 in Resources */,
 				550F6245217278AE00B5D5EB /* pencil.mp3 in Resources */,
+				5503A00A2208B685007316FE /* onionPotatoWaltzShining.gif in Resources */,
 				557DC63E21F7AD5D0089B638 /* potatoPeeling.gif in Resources */,
 				5516CD5A2162E001007C28F7 /* Assets.xcassets in Resources */,
 				557DC63B21F7AD5D0089B638 /* cooking.gif in Resources */,
 				5533157921F114EE00F27FE6 /* splash.mp3 in Resources */,
+				5503A0112208B685007316FE /* onionPotatoHamShining.gif in Resources */,
 				55A527372167BEAA00A1782C /* BookJson.json in Resources */,
+				5503A00C2208B685007316FE /* hamTable.gif in Resources */,
+				5503A0082208B685007316FE /* onionDiagonal.gif in Resources */,
 				5533158121F1182100F27FE6 /* laugh.mp3 in Resources */,
 				5516CD552162E001007C28F7 /* Main.storyboard in Resources */,
 				5533157521F1103D00F27FE6 /* peeling.mp3 in Resources */,
 				5533157B21F1159800F27FE6 /* soup.mp3 in Resources */,
 				5533157D21F1164600F27FE6 /* RPM-Eternal.mp3 in Resources */,
+				5503A00F2208B685007316FE /* man.gif in Resources */,
 				550F624221726ECB00B5D5EB /* happy-piano.mp3 in Resources */,
 				55AF826C217E09E600EF608E /* romantic-piano.mp3 in Resources */,
 				5533157721F1123A00F27FE6 /* RPM-Consort.mp3 in Resources */,

@@ -151,7 +151,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-    func addImageView(image: String, state: AppOrientationState){
+    func addImageView(image: String, loop: Int, state: AppOrientationState){
         switch state{
         case .Portrait:
             
@@ -160,7 +160,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             let y = self.view.frame.size.height - 70 - height
             let width = self.view.frame.size.width*0.923    //*24/26
             
-            let view = UIImageView(gifImage: UIImage(gifName: "\(image).gif"), manager: .defaultManager, loopCount: 1)
+            let view = UIImageView(gifImage: UIImage(gifName: "\(image).gif"), manager: .defaultManager, loopCount: loop)
             if(self.view.frame.size.height < 667){
                 view.frame = CGRect(x: x, y: y+8, width: width, height: height)
             }else{
@@ -178,7 +178,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     //            let x = (42*self.view.frame.size.width/45)*0.7 + 2*self.view.frame.size.width/45
     //            let width = 0.3*(42*self.view.frame.size.width/45)
                 let height = self.view.frame.size.height - 60
-                let view = UIImageView(gifImage: UIImage(gifName: "\(image).gif"), manager: .defaultManager, loopCount: 1)
+                let view = UIImageView(gifImage: UIImage(gifName: "\(image).gif"), manager: .defaultManager, loopCount: loop)
 
                 view.frame = CGRect(x: x, y: y, width: width, height: height)
                 view.contentMode = .scaleAspectFit
@@ -384,7 +384,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         case .Portrait:
             if ((arrayOfContent[i-1] as! NSDictionary)["photo"] != nil){
                 addTextView(text: (arrayOfContent[i-1] as! NSDictionary)["text"]! as! String, type: "normal", state: state)
-                addImageView(image: (arrayOfContent[i-1] as! NSDictionary)["photo"]! as! String, state: state)
+                addImageView(image: (arrayOfContent[i-1] as! NSDictionary)["photo"]! as! String, loop:(arrayOfContent[i-1] as! NSDictionary)["loop"]! as! Int, state: state)
             }else{
                 addTextView(text: (arrayOfContent[i-1] as! NSDictionary)["text"]! as! String, type: "withoutPhoto", state: state)
             }
@@ -395,7 +395,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         case .Landscape:
             if ((arrayOfContent[i-1] as! NSDictionary)["photo"] != nil){
                 addTextView(text: (arrayOfContent[i-1] as! NSDictionary)["text"]! as! String, type: "normal", state: state)
-                addImageView(image: (arrayOfContent[i-1] as! NSDictionary)["photo"]! as! String, state: state)
+                addImageView(image: (arrayOfContent[i-1] as! NSDictionary)["photo"]! as! String, loop:(arrayOfContent[i-1] as! NSDictionary)["loop"]! as! Int, state: state)
                 createBrackets(state: state)
             }
             else{
