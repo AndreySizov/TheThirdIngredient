@@ -70,14 +70,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             let width = self.view.frame.size.width*0.923    //*24/26
             let height = self.view.frame.size.height - 134 //-19-15-60-40
             
-            var extraSpaceForY = 0
-            var extraSpaceForHeight = 0
+            var extraSpaceForY = 10
+            var extraSpaceForHeight = 10
             if(self.view.frame.size.height < 667){
-                extraSpaceForY = 18
-                extraSpaceForHeight = 26
+                extraSpaceForY += 18
+                extraSpaceForHeight += 26
             }else if (self.view.frame.size.height < 812){
-                extraSpaceForY = 10
-                extraSpaceForHeight = 10
+                extraSpaceForY += 10
+                extraSpaceForHeight += 10
             }
             
             if type == "normal"{
@@ -87,18 +87,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 view = UITextView(frame: CGRect(x: x, y: y - CGFloat(extraSpaceForY), width: width, height: height + CGFloat(extraSpaceForHeight)))
             }
             
-            if(self.view.frame.size.height < 667){
+            if(self.view.frame.size.height < 568){
+                view.font = UIFont(name: "AmericanTypewriter", size: 10)
+            }else if(self.view.frame.size.height < 667){
                 view.font = UIFont(name: "AmericanTypewriter", size: 12)
             }else if (self.view.frame.size.height < 736){
                 view.font = UIFont(name: "AmericanTypewriter", size: 14)
+            }else if (self.view.frame.size.height < 896){
+                view.font = UIFont(name: "AmericanTypewriter", size: 15)
             }else{
                 view.font = UIFont(name: "AmericanTypewriter", size: 16)
             }
-            //        view.text = text
-            
-            view.text = text //(jsonData[0] as! NSDictionary)["text"]! as! String
-            view.textAlignment = .justified
-            self.view.addSubview(view)
+        
             
         case .Landscape:
             if (self.view.frame.size.width <= 736){
@@ -136,19 +136,24 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     view = UITextView(frame: CGRect(x: x, y: y, width: fullWidth, height: height))
                 }
             }
-            if(self.view.frame.size.width < 667){
+            
+            if(self.view.frame.size.width < 568){
+                view.font = UIFont(name: "AmericanTypewriter", size: 10)
+            }else if(self.view.frame.size.width < 667){
                 view.font = UIFont(name: "AmericanTypewriter", size: 12)
             }else if (self.view.frame.size.width < 736){
                 view.font = UIFont(name: "AmericanTypewriter", size: 14)
+            }else if (self.view.frame.size.width < 896){
+                view.font = UIFont(name: "AmericanTypewriter", size: 15)
             }else{
                 view.font = UIFont(name: "AmericanTypewriter", size: 16)
             }
-            //        view.text = text
-            
-            view.text = text //(jsonData[0] as! NSDictionary)["text"]! as! String
-            view.textAlignment = .justified
-            self.view.addSubview(view)
         }
+        
+        view.text = text //(jsonData[0] as! NSDictionary)["text"]! as! String
+        view.textAlignment = .justified
+        view.isEditable = false
+        self.view.addSubview(view)
     }
     
     func addImageView(image: String, loop: Int, state: AppOrientationState){
