@@ -35,6 +35,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         readJson()
+        
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(nextPage))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(previousPage))
+        
+        leftSwipe.direction = .left
+        rightSwipe.direction = .right
+        
+        self.view.addGestureRecognizer(leftSwipe)
+        self.view.addGestureRecognizer(rightSwipe)
     }
     
     override func prefersHomeIndicatorAutoHidden() -> Bool {
