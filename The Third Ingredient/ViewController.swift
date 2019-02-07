@@ -68,7 +68,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             let x = self.view.frame.size.width/26
             let y = self.view.frame.origin.y + 64   //19+15+30
             let width = self.view.frame.size.width*0.923    //*24/26
-            let height = self.view.frame.size.height - 134 //-19-15-60-40
+            let height = self.view.frame.size.height - 124 //-19-15-60-40+10
             
             var extraSpaceForY = 10
             var extraSpaceForHeight = 10
@@ -103,9 +103,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         case .Landscape:
             if (self.view.frame.size.width <= 736){
                 let x = self.view.frame.origin.x + self.view.frame.size.width/45
-                let y = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 10
-                let upper_height = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 10
-                let height = 0.9*(self.view.frame.size.height - upper_height)
+                let y = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height
+                let upper_height = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height
+                let height = (self.view.frame.size.height - upper_height)
                 let width = 0.9333*self.view.frame.size.width //*42/45
                 
                 if type == "normal"{
@@ -120,9 +120,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 }
             }else{
                 let x = self.view.frame.origin.x + 2*self.view.frame.size.width/45
-                let y = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 10
-                let upper_height = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height + 10
-                let height = 0.88*(self.view.frame.size.height - upper_height)
+                let y = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height
+                let upper_height = self.view.frame.origin.y + UIApplication.shared.statusBarFrame.height
+                let height = (self.view.frame.size.height - upper_height)
                 let width = 0.8889*self.view.frame.size.width //*40/45
                 
                 if type == "normal"{
@@ -140,11 +140,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             if(self.view.frame.size.width < 568){
                 view.font = UIFont(name: "AmericanTypewriter", size: 10)
             }else if(self.view.frame.size.width < 667){
-                view.font = UIFont(name: "AmericanTypewriter", size: 12)
+                view.font = UIFont(name: "AmericanTypewriter", size: 11)
             }else if (self.view.frame.size.width < 736){
-                view.font = UIFont(name: "AmericanTypewriter", size: 14)
-            }else if (self.view.frame.size.width < 896){
+                view.font = UIFont(name: "AmericanTypewriter", size: 13)
+            }else if (self.view.frame.size.width < 812){
                 view.font = UIFont(name: "AmericanTypewriter", size: 15)
+            }else if (self.view.frame.size.width < 896){
+                view.font = UIFont(name: "AmericanTypewriter", size: 13)
             }else{
                 view.font = UIFont(name: "AmericanTypewriter", size: 16)
             }
@@ -153,6 +155,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         view.text = text //(jsonData[0] as! NSDictionary)["text"]! as! String
         view.textAlignment = .justified
         view.isEditable = false
+        view.isScrollEnabled = false
         self.view.addSubview(view)
     }
     
