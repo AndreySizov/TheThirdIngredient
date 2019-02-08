@@ -41,5 +41,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>wiGuru.ttf</string>
+		<string>lazer84.ttf</string>
+	</array>
 </dict>
 </plist>

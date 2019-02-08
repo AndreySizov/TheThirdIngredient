@@ -46,6 +46,9 @@
 		55AF826C217E09E600EF608E /* romantic-piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55AF826A217E09E600EF608E /* romantic-piano.mp3 */; };
 		55E1B337220B9ABF00555FE3 /* manStairsOnion.gif in Resources */ = {isa = PBXBuildFile; fileRef = 55E1B335220B9ABE00555FE3 /* manStairsOnion.gif */; };
 		55E1B338220B9ABF00555FE3 /* onionPotatoHamShining.gif in Resources */ = {isa = PBXBuildFile; fileRef = 55E1B336220B9ABE00555FE3 /* onionPotatoHamShining.gif */; };
+		98638A38220C839800A61E04 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98638A37220C839800A61E04 /* LaunchViewController.swift */; };
+		98638A3C220C85D800A61E04 /* lazer84.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98638A3A220C85C900A61E04 /* lazer84.ttf */; };
+		98638A3D220C85D800A61E04 /* wiGuru.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98638A3B220C85C900A61E04 /* wiGuru.ttf */; };
 		E7C2C65BD63D2563E11806D7 /* Pods_The_Third_Ingredient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD19C7D72960E30C5D83CE57 /* Pods_The_Third_Ingredient.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +94,9 @@
 		55AF826A217E09E600EF608E /* romantic-piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "romantic-piano.mp3"; sourceTree = "<group>"; };
 		55E1B335220B9ABE00555FE3 /* manStairsOnion.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = manStairsOnion.gif; sourceTree = "<group>"; };
 		55E1B336220B9ABE00555FE3 /* onionPotatoHamShining.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = onionPotatoHamShining.gif; sourceTree = "<group>"; };
+		98638A37220C839800A61E04 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		98638A3A220C85C900A61E04 /* lazer84.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lazer84.ttf; sourceTree = "<group>"; };
+		98638A3B220C85C900A61E04 /* wiGuru.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = wiGuru.ttf; sourceTree = "<group>"; };
 		9F4B0C9F1C2F1B909A018022 /* Pods-The Third Ingredient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Third Ingredient.release.xcconfig"; path = "Pods/Target Support Files/Pods-The Third Ingredient/Pods-The Third Ingredient.release.xcconfig"; sourceTree = "<group>"; };
 		B38CD81EBF3115AEB054FD49 /* Pods-The Third Ingredient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Third Ingredient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-The Third Ingredient/Pods-The Third Ingredient.debug.xcconfig"; sourceTree = "<group>"; };
 		DD19C7D72960E30C5D83CE57 /* Pods_The_Third_Ingredient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Third_Ingredient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,11 +156,13 @@
 		5516CD4E2162E001007C28F7 /* The Third Ingredient */ = {
 			isa = PBXGroup;
 			children = (
+				98638A39220C850800A61E04 /* Resources */,
 				557DC63621F7AD1C0089B638 /* gif */,
 				550F624321726EDA00B5D5EB /* audio */,
 				55A527362167BEAA00A1782C /* BookJson.json */,
 				5516CD4F2162E001007C28F7 /* AppDelegate.swift */,
 				5516CD512162E001007C28F7 /* ViewController.swift */,
+				98638A37220C839800A61E04 /* LaunchViewController.swift */,
 				5516CD532162E001007C28F7 /* Main.storyboard */,
 				5516CD592162E001007C28F7 /* Assets.xcassets */,
 				5516CD5B2162E001007C28F7 /* LaunchScreen.storyboard */,
@@ -196,6 +204,15 @@
 				9F4B0C9F1C2F1B909A018022 /* Pods-The Third Ingredient.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		98638A39220C850800A61E04 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				98638A3A220C85C900A61E04 /* lazer84.ttf */,
+				98638A3B220C85C900A61E04 /* wiGuru.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		B8D4EAF364E51DA4D81B8289 /* Frameworks */ = {
@@ -267,6 +284,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98638A3C220C85D800A61E04 /* lazer84.ttf in Resources */,
+				98638A3D220C85D800A61E04 /* wiGuru.ttf in Resources */,
 				5503A0132208B685007316FE /* twoPotatoes.gif in Resources */,
 				5503A00D2208B685007316FE /* onionWaltz.gif in Resources */,
 				5503A00E2208B685007316FE /* manHat.gif in Resources */,
@@ -355,6 +374,7 @@
 				5516CD582162E001007C28F7 /* The_Third_Ingredient.xcdatamodeld in Sources */,
 				5516CD522162E001007C28F7 /* ViewController.swift in Sources */,
 				5516CD502162E001007C28F7 /* AppDelegate.swift in Sources */,
+				98638A38220C839800A61E04 /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

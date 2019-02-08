@@ -240,6 +240,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             pickerPageTextField = UITextField(frame: CGRect(x: self.view.frame.size.width/2 - 25, y: y, width: 50, height: 40))
             pickerPageTextField.text = "\(pageNumber)"
             pickerPageTextField.textAlignment = .center
+            pickerPageTextField.tintColor = UIColor.clear
             pickerPageTextField.font = UIFont(name: "HelveticaNeue-Thin", size: 25)
             pickerPageTextField.textColor = UIColor.black
             pickerPageTextField.addTarget(self, action: #selector(showPickerView), for: .editingDidBegin)
@@ -268,6 +269,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 pickerPageTextField = UITextField(frame: CGRect(x: x, y: y, width: 50, height: 0.1*self.view.frame.size.height))
                 pickerPageTextField.text = "\(pageNumber)"
                 pickerPageTextField.textAlignment = .center
+                pickerPageTextField.tintColor = UIColor.clear
                 pickerPageTextField.font = UIFont(name: "HelveticaNeue-Thin", size: 25)
                 pickerPageTextField.textColor = UIColor.black
                 pickerPageTextField.addTarget(self, action: #selector(showPickerView), for: .editingDidBegin)
