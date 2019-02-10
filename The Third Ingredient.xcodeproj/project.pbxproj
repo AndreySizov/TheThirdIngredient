@@ -44,6 +44,7 @@
 		55A527372167BEAA00A1782C /* BookJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 55A527362167BEAA00A1782C /* BookJson.json */; };
 		55AF826B217E09E600EF608E /* steps.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55AF8269217E09E600EF608E /* steps.mp3 */; };
 		55AF826C217E09E600EF608E /* romantic-piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55AF826A217E09E600EF608E /* romantic-piano.mp3 */; };
+		55CA4A192210CA5B00AF6FE1 /* onboarding.gif in Resources */ = {isa = PBXBuildFile; fileRef = 55CA4A182210CA5B00AF6FE1 /* onboarding.gif */; };
 		55E1B337220B9ABF00555FE3 /* manStairsOnion.gif in Resources */ = {isa = PBXBuildFile; fileRef = 55E1B335220B9ABE00555FE3 /* manStairsOnion.gif */; };
 		55E1B338220B9ABF00555FE3 /* onionPotatoHamShining.gif in Resources */ = {isa = PBXBuildFile; fileRef = 55E1B336220B9ABE00555FE3 /* onionPotatoHamShining.gif */; };
 		98638A38220C839800A61E04 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98638A37220C839800A61E04 /* LaunchViewController.swift */; };
@@ -93,6 +94,7 @@
 		55A527362167BEAA00A1782C /* BookJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BookJson.json; sourceTree = "<group>"; };
 		55AF8269217E09E600EF608E /* steps.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = steps.mp3; sourceTree = "<group>"; };
 		55AF826A217E09E600EF608E /* romantic-piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "romantic-piano.mp3"; sourceTree = "<group>"; };
+		55CA4A182210CA5B00AF6FE1 /* onboarding.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = onboarding.gif; sourceTree = "<group>"; };
 		55E1B335220B9ABE00555FE3 /* manStairsOnion.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = manStairsOnion.gif; sourceTree = "<group>"; };
 		55E1B336220B9ABE00555FE3 /* onionPotatoHamShining.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = onionPotatoHamShining.gif; sourceTree = "<group>"; };
 		98638A37220C839800A61E04 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		557DC63621F7AD1C0089B638 /* gif */ = {
 			isa = PBXGroup;
 			children = (
+				55CA4A182210CA5B00AF6FE1 /* onboarding.gif */,
 				55E1B335220B9ABE00555FE3 /* manStairsOnion.gif */,
 				55E1B336220B9ABE00555FE3 /* onionPotatoHamShining.gif */,
 				55039FFC2208B684007316FE /* ham.gif */,
@@ -302,6 +305,7 @@
 				5503A0122208B685007316FE /* hamEggs.gif in Resources */,
 				5516CD5D2162E001007C28F7 /* LaunchScreen.storyboard in Resources */,
 				5533157321F10FA100F27FE6 /* water.mp3 in Resources */,
+				55CA4A192210CA5B00AF6FE1 /* onboarding.gif in Resources */,
 				5503A00B2208B685007316FE /* womanAndMan.gif in Resources */,
 				5533157121F10ECD00F27FE6 /* dishes.mp3 in Resources */,
 				557DC63C21F7AD5D0089B638 /* house.gif in Resources */,

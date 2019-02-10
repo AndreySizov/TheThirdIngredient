@@ -23,9 +23,9 @@ class LaunchViewController: UIViewController {
         
         if presentViewTimer == nil {
             if tutorialStatus{
-                presentViewTimer = Timer.scheduledTimer(timeInterval: 6.5, target: self, selector: #selector(moveToMainVC), userInfo: nil, repeats: false)
+                presentViewTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(moveToMainVC), userInfo: nil, repeats: false)
             } else {
-                presentViewTimer = Timer.scheduledTimer(timeInterval: 6.5, target: self, selector: #selector(moveToTutorialVC), userInfo: nil, repeats: false)
+                presentViewTimer = Timer.scheduledTimer(timeInterval: 4.5, target: self, selector: #selector(showAlert), userInfo: nil, repeats: false)
             }
         }
     }
@@ -143,16 +143,40 @@ class LaunchViewController: UIViewController {
         self.view.addSubview(lowerTextView)
     }
     
+    func setTutorialWatched(){
+        UserDefaults.standard.set(true, forKey: "isTutorialWatched")
+    }
+    
     @objc func moveToMainVC(){
+        
+        setTutorialWatched()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let nextVC = storyboard.instantiateViewController(withIdentifier: "ContentVC")
         self.present(nextVC, animated: true, completion: nil)
     }
     
     @objc func moveToTutorialVC(){
+        
+        
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let nextVC = storyboard.instantiateViewController(withIdentifier: "TutorialVC")
         self.present(nextVC, animated: true, completion: nil)
+    }
+    
+    @objc func showAlert(){
+        
+        let alert = UIAlertController(title: "Добро пожаловать!", message: "Хотите изучить интерфейс приложения или сразу перейти к чтению?", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Изучить интерфейс", style: UIAlertActionStyle.default, handler: {
+            action in
+            self.moveToTutorialVC()
+        }))
+        alert.addAction(UIAlertAction(title: "Перейти к чтению", style: UIAlertActionStyle.default, handler: {
+            action in
+            self.moveToMainVC()
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
     }
 
 }

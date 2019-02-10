@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NaS-uw-h2s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NaS-uw-h2s">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,26 +39,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqQ-jF-qfI">
-                                <rect key="frame" x="20" y="353" width="374" height="30"/>
-                                <state key="normal" title="Пропустить туториал"/>
-                                <connections>
-                                    <action selector="moveToMainView:" destination="o2P-Fx-8YY" eventType="touchUpInside" id="GR8-yL-57b"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7vY-D8-LIv">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="qqQ-jF-qfI" firstAttribute="centerX" secondItem="qdC-g0-0bM" secondAttribute="centerX" id="0D8-91-fh8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qqQ-jF-qfI" secondAttribute="trailing" id="63M-pa-x9O"/>
-                            <constraint firstItem="qqQ-jF-qfI" firstAttribute="centerY" secondItem="qdC-g0-0bM" secondAttribute="centerY" id="8Ch-Rg-2Wm"/>
-                            <constraint firstItem="qqQ-jF-qfI" firstAttribute="leading" secondItem="qdC-g0-0bM" secondAttribute="leadingMargin" id="P06-BC-KW2"/>
+                            <constraint firstAttribute="trailing" secondItem="7vY-D8-LIv" secondAttribute="trailing" id="1l2-uq-deK"/>
+                            <constraint firstItem="7vY-D8-LIv" firstAttribute="top" secondItem="qdC-g0-0bM" secondAttribute="top" id="FCG-si-b5A"/>
+                            <constraint firstItem="7vY-D8-LIv" firstAttribute="leading" secondItem="qdC-g0-0bM" secondAttribute="leading" id="Rnv-85-3Qp"/>
+                            <constraint firstItem="ewc-u3-Z5b" firstAttribute="top" secondItem="7vY-D8-LIv" secondAttribute="bottom" id="a70-X6-snS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gifImageView" destination="7vY-D8-LIv" id="cqd-Gf-zY1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Zz-UG-3TY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="59" y="26"/>
+            <point key="canvasLocation" x="57.971014492753625" y="25.271739130434785"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
