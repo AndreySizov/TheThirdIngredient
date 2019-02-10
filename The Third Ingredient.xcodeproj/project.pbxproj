@@ -49,6 +49,7 @@
 		98638A38220C839800A61E04 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98638A37220C839800A61E04 /* LaunchViewController.swift */; };
 		98638A3C220C85D800A61E04 /* lazer84.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98638A3A220C85C900A61E04 /* lazer84.ttf */; };
 		98638A3D220C85D800A61E04 /* wiGuru.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98638A3B220C85C900A61E04 /* wiGuru.ttf */; };
+		98F6A79A221072E400DAC7AC /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F6A799221072E400DAC7AC /* TutorialViewController.swift */; };
 		E7C2C65BD63D2563E11806D7 /* Pods_The_Third_Ingredient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD19C7D72960E30C5D83CE57 /* Pods_The_Third_Ingredient.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,7 @@
 		98638A37220C839800A61E04 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		98638A3A220C85C900A61E04 /* lazer84.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lazer84.ttf; sourceTree = "<group>"; };
 		98638A3B220C85C900A61E04 /* wiGuru.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = wiGuru.ttf; sourceTree = "<group>"; };
+		98F6A799221072E400DAC7AC /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		9F4B0C9F1C2F1B909A018022 /* Pods-The Third Ingredient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Third Ingredient.release.xcconfig"; path = "Pods/Target Support Files/Pods-The Third Ingredient/Pods-The Third Ingredient.release.xcconfig"; sourceTree = "<group>"; };
 		B38CD81EBF3115AEB054FD49 /* Pods-The Third Ingredient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Third Ingredient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-The Third Ingredient/Pods-The Third Ingredient.debug.xcconfig"; sourceTree = "<group>"; };
 		DD19C7D72960E30C5D83CE57 /* Pods_The_Third_Ingredient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Third_Ingredient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +165,7 @@
 				5516CD4F2162E001007C28F7 /* AppDelegate.swift */,
 				5516CD512162E001007C28F7 /* ViewController.swift */,
 				98638A37220C839800A61E04 /* LaunchViewController.swift */,
+				98F6A799221072E400DAC7AC /* TutorialViewController.swift */,
 				5516CD532162E001007C28F7 /* Main.storyboard */,
 				5516CD592162E001007C28F7 /* Assets.xcassets */,
 				5516CD5B2162E001007C28F7 /* LaunchScreen.storyboard */,
@@ -373,6 +376,7 @@
 			files = (
 				5516CD582162E001007C28F7 /* The_Third_Ingredient.xcdatamodeld in Sources */,
 				5516CD522162E001007C28F7 /* ViewController.swift in Sources */,
+				98F6A79A221072E400DAC7AC /* TutorialViewController.swift in Sources */,
 				5516CD502162E001007C28F7 /* AppDelegate.swift in Sources */,
 				98638A38220C839800A61E04 /* LaunchViewController.swift in Sources */,
 			);

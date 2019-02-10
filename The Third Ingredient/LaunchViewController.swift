@@ -19,8 +19,14 @@ class LaunchViewController: UIViewController {
         createImage()
         createLowerText()
         
+        let tutorialStatus: Bool = UserDefaults.standard.bool(forKey: "isTutorialWatched")
+        
         if presentViewTimer == nil {
-            presentViewTimer = Timer.scheduledTimer(timeInterval: 6.5, target: self, selector: #selector(moveToMainVC), userInfo: nil, repeats: false)
+            if tutorialStatus{
+                presentViewTimer = Timer.scheduledTimer(timeInterval: 6.5, target: self, selector: #selector(moveToMainVC), userInfo: nil, repeats: false)
+            } else {
+                presentViewTimer = Timer.scheduledTimer(timeInterval: 6.5, target: self, selector: #selector(moveToTutorialVC), userInfo: nil, repeats: false)
+            }
         }
     }
     
@@ -140,6 +146,12 @@ class LaunchViewController: UIViewController {
     @objc func moveToMainVC(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let nextVC = storyboard.instantiateViewController(withIdentifier: "ContentVC")
+        self.present(nextVC, animated: true, completion: nil)
+    }
+    
+    @objc func moveToTutorialVC(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "TutorialVC")
         self.present(nextVC, animated: true, completion: nil)
     }
 

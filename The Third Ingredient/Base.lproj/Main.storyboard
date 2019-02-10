@@ -12,18 +12,61 @@
         <!--Launch View Controller-->
         <scene sceneID="nEL-Fd-mGl">
             <objects>
-                <viewController id="NaS-uw-h2s" customClass="LaunchViewController" customModule="The_Third_Ingredient" customModuleProvider="target" sceneMemberID="viewController"/>
+                <viewController id="NaS-uw-h2s" customClass="LaunchViewController" customModule="The_Third_Ingredient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2cH-fL-OB8"/>
+                        <viewControllerLayoutGuide type="bottom" id="av0-27-GsO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tk8-ve-SPR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GqW-Pa-vEU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-675.36231884057975" y="26.086956521739133"/>
+            <point key="canvasLocation" x="-667" y="25"/>
+        </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="Bbu-7U-7m6">
+            <objects>
+                <viewController storyboardIdentifier="TutorialVC" id="o2P-Fx-8YY" customClass="TutorialViewController" customModule="The_Third_Ingredient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hMx-YT-cLT"/>
+                        <viewControllerLayoutGuide type="bottom" id="ewc-u3-Z5b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qdC-g0-0bM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqQ-jF-qfI">
+                                <rect key="frame" x="20" y="353" width="374" height="30"/>
+                                <state key="normal" title="Пропустить туториал"/>
+                                <connections>
+                                    <action selector="moveToMainView:" destination="o2P-Fx-8YY" eventType="touchUpInside" id="GR8-yL-57b"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qqQ-jF-qfI" firstAttribute="centerX" secondItem="qdC-g0-0bM" secondAttribute="centerX" id="0D8-91-fh8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qqQ-jF-qfI" secondAttribute="trailing" id="63M-pa-x9O"/>
+                            <constraint firstItem="qqQ-jF-qfI" firstAttribute="centerY" secondItem="qdC-g0-0bM" secondAttribute="centerY" id="8Ch-Rg-2Wm"/>
+                            <constraint firstItem="qqQ-jF-qfI" firstAttribute="leading" secondItem="qdC-g0-0bM" secondAttribute="leadingMargin" id="P06-BC-KW2"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Zz-UG-3TY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="59" y="26"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ContentVC" id="BYZ-38-t0r" customClass="ViewController" customModule="The_Third_Ingredient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="J0f-wd-5p1"/>
-                        <viewControllerLayoutGuide type="bottom" id="3ff-fU-Zjn"/>
+                        <viewControllerLayoutGuide type="top" id="jdL-UW-qoi"/>
+                        <viewControllerLayoutGuide type="bottom" id="y1C-gx-Df2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -33,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="261" y="26"/>
+            <point key="canvasLocation" x="774" y="26"/>
         </scene>
     </scenes>
 </document>
