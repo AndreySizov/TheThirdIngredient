@@ -15,9 +15,6 @@ class LaunchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
-        createUpperLabel()
-        createImage()
-        createLowerText()
         
         let tutorialStatus: Bool = UserDefaults.standard.bool(forKey: "isTutorialWatched")
         
@@ -30,10 +27,15 @@ class LaunchViewController: UIViewController {
         }
     }
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        get {
-            return .portrait
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
+        createUpperLabel()
+        createImage()
+        createLowerText()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.all, andRotateTo: UIInterfaceOrientation.portrait)
     }
     
     func createUpperLabel(){
@@ -54,7 +56,10 @@ class LaunchViewController: UIViewController {
             upperLabel.font = UIFont(name: "WiGuru4", size: 29)
         }else if (self.view.frame.size.height < 896){
             upperLabel.font = UIFont(name: "WiGuru4", size: 31)
-        }else{
+        }else if (self.view.frame.size.height == 896){
+            // iPhone XR, XS MAX
+            upperLabel.font = UIFont(name: "WiGuru4", size: 33)
+        }else {
             // iPads resolutions
             if (self.view.frame.size.height < 1112){
                 // lot of ipads
@@ -112,9 +117,13 @@ class LaunchViewController: UIViewController {
             lowerTextView.text = "\t\t\tТРЕТИЙ\n \t\t\t\tИНГРЕДИЕНТ"
             lowerTextView.font = UIFont(name: "lazer84 [RUS by Daymarius]", size: 35)
         }else if (self.view.frame.size.height < 896){
-            lowerTextView.text = "\t\t\tТРЕТИЙ\n \t\t\t\tИНГРЕДИЕНТ"
+            lowerTextView.text = "\t\tТРЕТИЙ\n \t\t\tИНГРЕДИЕНТ"
             lowerTextView.font = UIFont(name: "lazer84 [RUS by Daymarius]", size: 37)
-        }else{
+        }else if (self.view.frame.size.height == 896){
+            // iPhone XR, XS MAX
+            lowerTextView.text = "\t\t\tТРЕТИЙ\n \t\t\tИНГРЕДИЕНТ"
+            lowerTextView.font = UIFont(name: "lazer84 [RUS by Daymarius]", size: 38)
+        }else {
              // iPads resolutions
             if (self.view.frame.size.height < 1112){
                 // lot of ipads
@@ -156,8 +165,6 @@ class LaunchViewController: UIViewController {
     }
     
     @objc func moveToTutorialVC(){
-        
-        
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let nextVC = storyboard.instantiateViewController(withIdentifier: "TutorialVC")

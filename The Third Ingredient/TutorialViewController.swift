@@ -24,6 +24,14 @@ class TutorialViewController: UIViewController, SwiftyGifDelegate {
 //        UIApplication.shared.setStatusBarStyle(.lightContent, animated: false)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.all, andRotateTo: UIInterfaceOrientation.portrait)
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return UIStatusBarStyle.lightContent
     }
@@ -42,10 +50,8 @@ class TutorialViewController: UIViewController, SwiftyGifDelegate {
     }
     
     func showAlert(){
-        
         if alertStop != nil{
-            
-        alertStop!.dismiss(animated: true, completion: nil)
+            alertStop!.dismiss(animated: true, completion: nil)
         }
         let alert = UIAlertController(title: "Обучение пройдено!", message: "Хотите повторить или перейти к чтению?", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Повторить", style: UIAlertActionStyle.default, handler: {
@@ -59,8 +65,6 @@ class TutorialViewController: UIViewController, SwiftyGifDelegate {
             
         }))
         self.present(alert, animated: true, completion: nil)
-        
-        
     }
     
     @objc func showStopAlert(){
@@ -79,7 +83,6 @@ class TutorialViewController: UIViewController, SwiftyGifDelegate {
     
     
     func moveToMainVC(){
-        
         setTutorialWatched()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let nextVC = storyboard.instantiateViewController(withIdentifier: "ContentVC")

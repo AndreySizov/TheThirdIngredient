@@ -31,10 +31,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var pauseTimer: Timer?
     var orientation = AppOrientationState.Portrait
     var textViewWidthInLandscapeMode: CGFloat?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         readJson()
+        
+        let lastPage: Int = UserDefaults.standard.integer(forKey: "lastPage")
+        if lastPage != 0 {
+            presentPage = lastPage
+        }
         
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(nextPage))
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(previousPage))
@@ -474,6 +479,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 }
             }
         }
+        
+        UserDefaults.standard.set(presentPage, forKey: "lastPage")
     }
     
     func playMusic(sound: String, isItMainTheme: Bool){
