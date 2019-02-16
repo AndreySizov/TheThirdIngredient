@@ -71,13 +71,13 @@ class TutorialViewController: UIViewController, SwiftyGifDelegate {
         self.gifImageView.stopAnimating()
         
         alertStop = UIAlertController(title: nil, message: "Хотите прервать и перейти к чтению?", preferredStyle: UIAlertControllerStyle.alert)
-        alertStop!.addAction(UIAlertAction(title: "Продолжить", style: UIAlertActionStyle.default, handler: nil))
-        alertStop!.addAction(UIAlertAction(title: "Перейти к чтению", style: UIAlertActionStyle.default, handler: {
+        alertStop!.addAction(UIAlertAction(title: "Да, перейти к чтению", style: UIAlertActionStyle.default, handler: {
             action in
             
             self.moveToMainVC()
             
         }))
+        alertStop!.addAction(UIAlertAction(title: "Нет", style: UIAlertActionStyle.default, handler: nil))
         self.present(alertStop!, animated: true, completion: nil)
     }
     
